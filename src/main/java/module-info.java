@@ -9,6 +9,10 @@ module com.example.demo {
     requires google.cloud.firestore;
     requires com.google.auth;
     requires com.google.api.apicommon;
+    requires java.logging;
+    requires google.cloud.core;
+
+
 
     opens com.example.demo to javafx.fxml;
     exports com.example.demo;

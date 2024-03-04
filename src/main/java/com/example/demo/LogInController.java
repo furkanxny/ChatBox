@@ -25,15 +25,23 @@ public class LogInController {
     private Firestore firestore;
     Firebase firebase;
 
+
+
+
     @FXML
     private void initialize() {
         firebase = new Firebase();
     }
 
 
+
+
     @FXML
     void changeSceneToChat(ActionEvent event) throws IOException {
-        if (firebase.loginUser(emailTF, passwordTF) == true) {
+         String emailV = emailTF.getText();
+         String passV =passwordTF.getText();
+        firebase.readFirebase();
+        if (firebase.loginUser(emailV, passV)) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("GPT-UI.fxml"));
             Parent secondViewRoot = loader.load();
 
@@ -41,8 +49,16 @@ public class LogInController {
 
             Scene scene = new Scene(secondViewRoot);
             stage.setScene(scene);
+
+        }
+        else {
+            System.out.println(firebase.loginUser(emailV, passV));
         }
 
+
+
     }
+
+
 
 }

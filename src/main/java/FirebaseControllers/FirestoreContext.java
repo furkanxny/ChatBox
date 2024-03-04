@@ -14,7 +14,7 @@ public class FirestoreContext {
     public Firestore firebase() {
         try {
             FirebaseOptions options = new FirebaseOptions.Builder()
-                    .setCredentials(fromStream(getClass().getResourceAsStream("Firebase/key.json")))
+                    .setCredentials(fromStream(getClass().getResourceAsStream("/Firebase/key.json")))
                     .build();
             FirebaseApp.initializeApp(options);
         } catch (IOException ex) {
