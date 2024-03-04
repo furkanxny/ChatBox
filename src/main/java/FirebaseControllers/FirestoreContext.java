@@ -11,15 +11,15 @@ import static com.google.auth.oauth2.ServiceAccountCredentials.fromStream;
 
 public class FirestoreContext {
 
-//    public Firestore firebase() {
-//        try {
-//            FirebaseOptions options = new FirebaseOptions.Builder()
-//                    .setCredentials(fromStream(getClass().getResourceAsStream("/app/Firebase/key.json")))
-//                    .build();
-//            FirebaseApp.initializeApp(options);
-//        } catch (IOException ex) {
-//            ex.printStackTrace();
-//        }
-//        return FirestoreClient.getFirestore();
-//    }
+    public Firestore firebase() {
+        try {
+            FirebaseOptions options = new FirebaseOptions.Builder()
+                    .setCredentials(fromStream(getClass().getResourceAsStream("Firebase/key.json")))
+                    .build();
+            FirebaseApp.initializeApp(options);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        return FirestoreClient.getFirestore();
+    }
 }

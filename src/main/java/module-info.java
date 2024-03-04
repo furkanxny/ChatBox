@@ -8,6 +8,7 @@ module com.example.demo {
     requires firebase.admin;
     requires google.cloud.firestore;
     requires com.google.auth;
+    requires com.google.api.apicommon;
 
     opens com.example.demo to javafx.fxml;
     exports com.example.demo;

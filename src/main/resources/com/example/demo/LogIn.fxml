@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
@@ -10,12 +11,21 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane prefHeight="380.0" prefWidth="379.0" style="-fx-background-color: #FF6666;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.LogInController">
    <center>
       <Pane prefHeight="380.0" prefWidth="380.0" style="-fx-background-radius: 0;" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="314.0" layoutY="7.0" mnemonicParsing="false" onAction="#toAIButtonHandler" text="Go To AI" />
+            <Button layoutX="178.0" layoutY="332.0" maxHeight="5.0" maxWidth="5.0" minHeight="5.0" minWidth="5.0" mnemonicParsing="false" onAction="#changeSceneToChat" prefHeight="5.0" prefWidth="5.0" text="Go To AI">
+               <graphic>
+                  <ImageView fitHeight="142.0" fitWidth="285.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Other%20Pngs/7.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets bottom="-50.0" right="280.0" />
+               </padding></Button>
             <TextField fx:id="emailTF" alignment="CENTER" layoutX="82.0" layoutY="147.0" prefHeight="50.0" prefWidth="250.0" promptText="Email" style="-fx-border-color: #0598ff; -fx-background-color: transparent; -fx-border-width: 0px 0px 2px;" />
             <PasswordField fx:id="passwordTF" alignment="CENTER" layoutX="82.0" layoutY="197.0" prefHeight="50.0" prefWidth="250.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px;" />
             <Label alignment="CENTER" layoutX="37.0" layoutY="27.0" prefHeight="99.0" prefWidth="309.0" text="Sign In">
@@ -31,11 +41,6 @@
             <ImageView fitHeight="59.0" fitWidth="74.0" layoutX="22.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Other%20Pngs/3.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="142.0" fitWidth="285.0" layoutX="51.0" layoutY="275.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Other%20Pngs/7.png" />
                </image>
             </ImageView>
          </children>

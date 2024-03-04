@@ -1,9 +1,8 @@
 package com.example.demo;
 
+import FirebaseControllers.Firebase;
 import Models.Person;
 import com.google.cloud.firestore.Firestore;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,37 +18,31 @@ import java.io.IOException;
 public class LogInController {
     @FXML
     private TextField emailTF;
-
     @FXML
     private PasswordField passwordTF;
     private boolean key;
-
     private Person person;
     private Firestore firestore;
-
-
-
-    private final ObservableList<Person> listOfUsers = FXCollections.observableArrayList();
-
-
-
-
+    Firebase firebase;
 
     @FXML
-    void toAIButtonHandler(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("GPT-UI.fxml"));
-        Parent secondViewRoot = loader.load();
-
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-        Scene scene = new Scene(secondViewRoot);
-        stage.setScene(scene);
+    private void initialize() {
+        firebase = new Firebase();
     }
 
 
+    @FXML
+    void changeSceneToChat(ActionEvent event) throws IOException {
+        if (firebase.loginUser(emailTF, passwordTF) == true) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("GPT-UI.fxml"));
+            Parent secondViewRoot = loader.load();
 
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
+            Scene scene = new Scene(secondViewRoot);
+            stage.setScene(scene);
+        }
 
-
+    }
 
 }
