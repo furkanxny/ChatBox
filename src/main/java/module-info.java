@@ -11,7 +11,10 @@ module com.example.demo {
     requires com.google.api.apicommon;
     requires java.logging;
     requires google.cloud.core;
+    requires com.google.gson;
+    requires okhttp3;
 
+    opens OpenAI to com.google.gson;
 
 
     opens com.example.demo to javafx.fxml;
