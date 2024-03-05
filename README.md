@@ -1,2 +1,2 @@
 # AIFX
-JavaFX AI Integration
+JavaFX AI Integration with ChatGPT4 Turbo
