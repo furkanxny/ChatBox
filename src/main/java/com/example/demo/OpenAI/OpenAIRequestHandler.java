@@ -13,7 +13,7 @@ import java.util.List;
 
 public class OpenAIRequestHandler {
     private static final String API_URL = "https://api.openai.com/v1/chat/completions";
-    private static final String API_KEY = "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";
+    private static final String API_KEY = "SECRET KEY";
     private static final OkHttpClient client = new OkHttpClient();
     private static final Gson gson = new Gson();
     public static Gson getGson() {
