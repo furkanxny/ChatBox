@@ -4,12 +4,15 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AIControllers.GPTUIController">
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.AIControllers.GPTUIController">
    <children>
-      <TextArea fx:id="outputTF" layoutX="146.0" layoutY="102.0" prefHeight="197.0" prefWidth="308.0" />
-      <TextField fx:id="inputTF" layoutX="208.0" layoutY="37.0" />
-      <Button fx:id="enterButton" layoutX="261.0" layoutY="328.0" mnemonicParsing="false" onAction="#enterButtonOnAction" text="Button" />
+      <TextArea fx:id="outputTF" layoutX="98.0" layoutY="120.0" prefHeight="560.0" prefWidth="1053.0" promptText="this is example">
+         <font>
+            <Font name="Impact" size="18.0" />
+         </font></TextArea>
+      <TextField fx:id="inputTF" alignment="CENTER" layoutX="399.0" layoutY="53.0" prefHeight="26.0" prefWidth="329.0" promptText="Promth" />
+      <Button fx:id="enterButton" layoutX="538.0" layoutY="706.0" mnemonicParsing="false" onAction="#enterButtonOnAction" prefHeight="44.0" prefWidth="129.0" style="-fx-background-radius: 50;" text="Enter" />
    </children>
 </AnchorPane>

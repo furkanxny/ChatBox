@@ -1,4 +1,4 @@
-package FirebaseControllers;
+package com.example.demo.FirebaseControllers;
 
 import java.io.IOException;
 

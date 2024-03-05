@@ -1,14 +1,11 @@
-package FirebaseControllers;
+package com.example.demo.FirebaseControllers;
 
-import Models.Person;
+import com.example.demo.Models.Person;
 import com.example.demo.Application;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.control.Alert;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
 
 import java.util.*;
 import java.util.concurrent.ExecutionException;

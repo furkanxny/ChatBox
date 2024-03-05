@@ -1,6 +1,6 @@
 package com.example.demo;
 
-import FirebaseControllers.FirestoreContext;
+import com.example.demo.FirebaseControllers.FirestoreContext;
 import com.google.cloud.firestore.Firestore;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -15,8 +15,8 @@ public class Application extends javafx.application.Application {
     @Override
     public void start(Stage stage) throws IOException {
         fstore = contxtFirebase.firebase();
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("LogIn.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 400, 400);
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("GPT-UI.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();

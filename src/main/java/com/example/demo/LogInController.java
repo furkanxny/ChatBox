@@ -1,8 +1,6 @@
 package com.example.demo;
 
-import FirebaseControllers.Firebase;
-import Models.Person;
-import com.google.cloud.firestore.Firestore;
+import com.example.demo.FirebaseControllers.Firebase;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,26 +18,17 @@ public class LogInController {
     private TextField emailTF;
     @FXML
     private PasswordField passwordTF;
-    private boolean key;
-    private Person person;
-    private Firestore firestore;
     Firebase firebase;
-
-
-
 
     @FXML
     private void initialize() {
         firebase = new Firebase();
     }
 
-
-
-
     @FXML
     void changeSceneToChat(ActionEvent event) throws IOException {
-         String emailV = emailTF.getText();
-         String passV =passwordTF.getText();
+        String emailV = emailTF.getText();
+        String passV = passwordTF.getText();
         firebase.readFirebase();
         if (firebase.loginUser(emailV, passV)) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("GPT-UI.fxml"));
@@ -49,16 +38,14 @@ public class LogInController {
 
             Scene scene = new Scene(secondViewRoot);
             stage.setScene(scene);
+            stage.centerOnScreen();
 
-        }
-        else {
+        } else {
             System.out.println(firebase.loginUser(emailV, passV));
         }
 
 
-
     }
-
 
 
 }

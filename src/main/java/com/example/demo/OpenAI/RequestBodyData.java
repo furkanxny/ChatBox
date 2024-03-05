@@ -1,4 +1,4 @@
-package OpenAI;
+package com.example.demo.OpenAI;
 
 
 import java.util.List;

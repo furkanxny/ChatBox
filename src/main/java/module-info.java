@@ -13,12 +13,17 @@ module com.example.demo {
     requires google.cloud.core;
     requires com.google.gson;
     requires okhttp3;
+    requires com.fasterxml.jackson.annotation;
+    requires java.net.http;
+    requires com.fasterxml.jackson.databind;
 
-    opens OpenAI to com.google.gson;
+    opens com.example.demo.dto to com.fasterxml.jackson.databind;
+
+    opens com.example.demo.OpenAI to com.google.gson;
 
 
     opens com.example.demo to javafx.fxml;
     exports com.example.demo;
-    exports AIControllers;
-    opens AIControllers to javafx.fxml;
+    exports com.example.demo.AIControllers;
+    opens com.example.demo.AIControllers to javafx.fxml;
 }

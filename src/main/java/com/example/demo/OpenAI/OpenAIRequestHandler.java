@@ -1,7 +1,5 @@
-package OpenAI;
+package com.example.demo.OpenAI;
 
-import com.google.gson.Gson;
-import okhttp3.*;
 import com.google.gson.Gson;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
@@ -15,12 +13,15 @@ import java.util.List;
 
 public class OpenAIRequestHandler {
     private static final String API_URL = "https://api.openai.com/v1/chat/completions";
-    private static final String API_KEY = "Secret-Key";
+    private static final String API_KEY = "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";
     private static final OkHttpClient client = new OkHttpClient();
     private static final Gson gson = new Gson();
     public static Gson getGson() {
         return gson;
     }
+
+
+
 
 
     public static String makeRequest(String prompt) throws IOException {

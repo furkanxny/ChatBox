@@ -1,4 +1,4 @@
-package FirebaseControllers;
+package com.example.demo.FirebaseControllers;
 
 import javafx.beans.property.ReadOnlyBooleanProperty;
 import javafx.beans.property.ReadOnlyBooleanWrapper;
