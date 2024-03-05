@@ -15,7 +15,12 @@ import static java.lang.Thread.sleep;
 
 public class GPTMethods {
 
+    private StringBuilder stringBuilder = new StringBuilder();
     private int messageProcessCount = 0;
+
+    public GPTMethods() {
+        this.stringBuilder = new StringBuilder();
+    }
 
 
     private void waitUntilRunIsFinished(AssistantAIClient client, ThreadResponseDTO thread, RunResponseDTO run, long DELAY) throws InterruptedException {
@@ -46,6 +51,8 @@ public class GPTMethods {
                     String newResponse = organizeStringByWordCount(textContent, 20);
                     outputTF.setText(newResponse);
 
+                    stringBuilder.append("ChatGPT: ").append(newResponse).append("n/");
+
                     messageProcessCount++;
                     inputTF.clear();
                     break;
@@ -74,6 +81,7 @@ public class GPTMethods {
     }
 
     public void initializeAssistant(TextArea outputTF, TextField inputTF) {
+        stringBuilder.append("user :").append(inputTF.getText()).append("n/");
         Properties properties = new Properties();
         long DELAY = 3;
 
@@ -85,9 +93,11 @@ public class GPTMethods {
             properties.load(input);
 
             AssistantAIClient client = new AssistantAIClient(properties);
-            AssistantResponseDTO assistant = client.createAssistant(properties.getProperty("openai.assistant.instructions4"));
+            AssistantResponseDTO assistant = client.createAssistant(properties.getProperty("openai.assistant.instructions5"));
             ThreadResponseDTO thread = client.createThread();
-            client.sendMessage(thread.id(), "user", inputTF.getText());
+            String request = String.valueOf(stringBuilder);
+            System.out.println(request);
+            client.sendMessage(thread.id(), "user", request);
             RunResponseDTO run = client.runMessage(thread.id(), assistant.id());
 
             waitUntilRunIsFinished(client, thread, run, DELAY);

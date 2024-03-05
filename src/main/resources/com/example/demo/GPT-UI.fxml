@@ -1,18 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.AIControllers.GPTUIController">
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #BBDDBB;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.AIControllers.GPTUIController">
    <children>
-      <TextArea fx:id="outputTF" layoutX="98.0" layoutY="120.0" prefHeight="560.0" prefWidth="1053.0" promptText="this is example">
+      <TextArea fx:id="outputTF" editable="false" layoutX="132.0" layoutY="94.0" prefHeight="560.0" prefWidth="941.0">
          <font>
             <Font name="Impact" size="18.0" />
          </font></TextArea>
-      <TextField fx:id="inputTF" alignment="CENTER" layoutX="399.0" layoutY="53.0" prefHeight="26.0" prefWidth="329.0" promptText="Promth" />
-      <Button fx:id="enterButton" layoutX="538.0" layoutY="706.0" mnemonicParsing="false" onAction="#enterButtonOnAction" prefHeight="44.0" prefWidth="129.0" style="-fx-background-radius: 50;" text="Enter" />
+      <TextField fx:id="inputTF" alignment="CENTER" layoutX="217.0" layoutY="694.0" prefHeight="52.0" prefWidth="622.0" promptText="prompt" style="-fx-background-radius: 30;">
+         <font>
+            <Font name="Phosphate Inline" size="25.0" />
+         </font></TextField>
+      <Button fx:id="enterButton" layoutX="917.0" layoutY="698.0" mnemonicParsing="false" onAction="#enterButtonOnAction" prefHeight="44.0" prefWidth="129.0" style="-fx-background-radius: 50;" text="Enter">
+         <font>
+            <Font name="Phosphate Inline" size="22.0" />
+         </font></Button>
+      <Label layoutX="414.0" layoutY="14.0" text="CHAT GPT TURBO">
+         <font>
+            <Font name="Phosphate Inline" size="51.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
