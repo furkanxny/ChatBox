@@ -1,4 +1,4 @@
-```
+
 # ChatGPT Desktop Application
 
 ## Introduction
