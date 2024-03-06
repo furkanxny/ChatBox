@@ -11,16 +11,17 @@ These instructions will get you a copy of the project up and running on your loc
 - JDK 11 or newer
 - Maven
 - An OpenAI API key
+- Firestore DB.
 
 ### Installing
 Clone the repository to your local machine:
 
-git clone https://github.com/yourusername/yourprojectname.git
+git clone https://github.com/furkanxny/AIFX.git
 
 
 Navigate into the project directory:
 
-```cd yourprojectname
+```cd AIFX
 ```
 
 Dependencies
