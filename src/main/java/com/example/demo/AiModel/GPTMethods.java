@@ -93,7 +93,7 @@ public class GPTMethods {
             properties.load(input);
 
             AssistantAIClient client = new AssistantAIClient(properties);
-            AssistantResponseDTO assistant = client.createAssistant(properties.getProperty("openai.assistant.instructions5"));
+            AssistantResponseDTO assistant = client.createAssistant(properties.getProperty("openai.assistant.instructions"));
             ThreadResponseDTO thread = client.createThread();
             String request = String.valueOf(stringBuilder);
             System.out.println(request);

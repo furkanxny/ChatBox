@@ -7,21 +7,21 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #BBDDBB;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.AIControllers.GPTUIController">
+<AnchorPane prefHeight="800.0" prefWidth="1350.0" style="-fx-background-color: #BBDDBB;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.AIControllers.GPTUIController">
    <children>
-      <TextArea fx:id="outputTF" editable="false" layoutX="132.0" layoutY="94.0" prefHeight="560.0" prefWidth="941.0">
+      <TextArea fx:id="outputTF" editable="false" layoutX="62.0" layoutY="89.0" opacity="0.87" prefHeight="557.0" prefWidth="1224.0">
          <font>
             <Font name="Impact" size="18.0" />
          </font></TextArea>
-      <TextField fx:id="inputTF" alignment="CENTER" layoutX="217.0" layoutY="694.0" prefHeight="52.0" prefWidth="622.0" promptText="prompt" style="-fx-background-radius: 30;">
+      <TextField fx:id="inputTF" alignment="CENTER" layoutX="231.0" layoutY="673.0" prefHeight="52.0" prefWidth="622.0" promptText="prompt" style="-fx-background-radius: 30; -fx-border-color: #87CEEB; -fx-border-radius: 50; -fx-background-color: transparent;">
          <font>
             <Font name="Phosphate Inline" size="25.0" />
          </font></TextField>
-      <Button fx:id="enterButton" layoutX="917.0" layoutY="698.0" mnemonicParsing="false" onAction="#enterButtonOnAction" prefHeight="44.0" prefWidth="129.0" style="-fx-background-radius: 50;" text="Enter">
+      <Button fx:id="enterButton" layoutX="914.0" layoutY="677.0" mnemonicParsing="false" onAction="#enterButtonOnAction" opacity="0.72" prefHeight="44.0" prefWidth="129.0" style="-fx-background-radius: 50; -fx-background-color: #AAAAAA;" text="Enter">
          <font>
             <Font name="Phosphate Inline" size="22.0" />
          </font></Button>
-      <Label layoutX="414.0" layoutY="14.0" text="CHAT GPT TURBO">
+      <Label layoutX="394.0" layoutY="11.0" style="-fx-background-color: #AABBBB;" text="CHAT GPT TURBO">
          <font>
             <Font name="Phosphate Inline" size="51.0" />
          </font>
