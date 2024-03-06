@@ -15,7 +15,7 @@ These instructions will get you a copy of the project up and running on your loc
 ### Installing
 Clone the repository to your local machine:
 
-git clone https://github.com/yourusername/yourprojectname.git```
+git clone https://github.com/yourusername/yourprojectname.git
 
 
 Navigate into the project directory:
