@@ -1,4 +1,4 @@
-``` bash
+```
 # ChatGPT Desktop Application
 
 ## Introduction
