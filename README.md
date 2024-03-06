@@ -65,6 +65,8 @@ Replace placeholders like `yourusername/yourprojectname`, `yourartifactid-versio
 Make sure to also include a `CONTRIBUTING.md` and a `LICENSE` file in your repository to guide contributions and to clearly state the license under which your software is distributed.
 ```
 For more detailed inquiries, you can contact the project maintainers directly.
+
+
 ![Screen Shot 2024-03-06 at 2 09 31 AM (2)](https://github.com/furkanxny/AIFX/assets/116584632/7865d28a-d4be-47f9-b278-6667d4efb134)
 
 
