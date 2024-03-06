@@ -20,8 +20,8 @@ git clone https://github.com/furkanxny/AIFX.git
 
 
 Navigate into the project directory:
-
-```cd AIFX
+```
+cd AIFX
 ```
 
 Dependencies
