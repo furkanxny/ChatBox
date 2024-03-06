@@ -18,10 +18,16 @@ public class GPTMethods {
     private StringBuilder stringBuilder = new StringBuilder();
     private int messageProcessCount = 0;
 
+    int counter;
     public GPTMethods() {
         this.stringBuilder = new StringBuilder();
     }
 
+
+    public int counter(){
+        counter++;
+        return counter;
+    }
 
     private void waitUntilRunIsFinished(AssistantAIClient client, ThreadResponseDTO thread, RunResponseDTO run, long DELAY) throws InterruptedException {
         while (!isRunDone(client, thread.id(), run.id())) {
@@ -80,7 +86,7 @@ public class GPTMethods {
         return finalStates.contains(runStatus);
     }
 
-    public void initializeAssistant(TextArea outputTF, TextField inputTF) {
+    public void initializeAssistant(TextArea outputTF, TextField inputTF, String initialPrompt) {
         stringBuilder.append("user :").append(inputTF.getText()).append("n/");
         Properties properties = new Properties();
         long DELAY = 3;
@@ -93,11 +99,40 @@ public class GPTMethods {
             properties.load(input);
 
             AssistantAIClient client = new AssistantAIClient(properties);
-            AssistantResponseDTO assistant = client.createAssistant(properties.getProperty("openai.assistant.instructions"));
+            AssistantResponseDTO assistant = client.createAssistant(initialPrompt);
             ThreadResponseDTO thread = client.createThread();
             String request = String.valueOf(stringBuilder);
             System.out.println(request);
             client.sendMessage(thread.id(), "user", request);
+            RunResponseDTO run = client.runMessage(thread.id(), assistant.id());
+
+            waitUntilRunIsFinished(client, thread, run, DELAY);
+
+            MessagesListResponseDTO allResponses = client.getMessages(thread.id());
+            log(allResponses, outputTF, inputTF);
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public void initializeAssistant2(TextArea outputTF, TextField inputTF, String initialPrompt) {
+        Properties properties = new Properties();
+        long DELAY = 3;
+
+        try (InputStream input = getClass().getClassLoader().getResourceAsStream("application.properties")) {
+            if (input == null) {
+                System.out.println("Sorry, unable to find application.properties");
+                return;
+            }
+            properties.load(input);
+
+            AssistantAIClient client = new AssistantAIClient(properties);
+            AssistantResponseDTO assistant = client.createAssistant(initialPrompt);
+            ThreadResponseDTO thread = client.createThread();
+            String request = String.valueOf(inputTF);
+            System.out.println(request);
+            client.sendMessage(thread.id(), "user",request);
             RunResponseDTO run = client.runMessage(thread.id(), assistant.id());
 
             waitUntilRunIsFinished(client, thread, run, DELAY);

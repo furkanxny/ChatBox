@@ -9,6 +9,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.Properties;
 
+import static com.example.demo.AiModel.GPTModel.GPT3_5_TURBO;
 import static com.example.demo.AiModel.GPTModel.GPT4_1106_PREVIEW;
 
 public class AssistantAIClient {
@@ -38,7 +39,7 @@ public class AssistantAIClient {
     }
 
     public AssistantResponseDTO createAssistant(String initialPrompt) throws Exception {
-        AssistantRequestDTO dto = new AssistantRequestDTO(GPT4_1106_PREVIEW.getName(), initialPrompt);
+        AssistantRequestDTO dto = new AssistantRequestDTO(GPT3_5_TURBO.getName(), initialPrompt);
         String response = post(assistantsUrl, dto);
         return objectMapper.readValue(response, AssistantResponseDTO.class);
     }
