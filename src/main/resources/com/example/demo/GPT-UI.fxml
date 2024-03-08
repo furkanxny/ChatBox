@@ -14,11 +14,11 @@
    <children>
       <TextArea fx:id="outputTF" disable="true" editable="false" layoutX="79.0" layoutY="100.0" opacity="0.87" prefHeight="557.0" prefWidth="1224.0">
          <font>
-            <Font name="Impact" size="18.0" />
+            <Font name="Arial Rounded MT Bold" size="18.0" />
          </font></TextArea>
       <TextField fx:id="inputTF" alignment="CENTER" layoutX="288.0" layoutY="671.0" prefHeight="52.0" prefWidth="679.0" promptText="prompt" style="-fx-background-radius: 30; -fx-border-color: #87CEEB; -fx-border-radius: 50; -fx-background-color: transparent;">
          <font>
-            <Font name="Phosphate Inline" size="25.0" />
+            <Font name="Arial Rounded MT Bold" size="25.0" />
          </font></TextField>
       <Button fx:id="enterButton" layoutX="1022.0" layoutY="671.0" mnemonicParsing="false" onAction="#enterButtonOnAction" opacity="0.72" prefHeight="44.0" prefWidth="129.0" style="-fx-background-radius: 50; -fx-background-color: #AAAAAA;" text="Enter">
          <font>
@@ -54,7 +54,7 @@
       </RadioButton>
       <Text fx:id="count" layoutX="145.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Count">
          <font>
-            <Font name="Phosphate Inline" size="21.0" />
+            <Font name="Impact" size="21.0" />
          </font>
       </Text>
    </children>

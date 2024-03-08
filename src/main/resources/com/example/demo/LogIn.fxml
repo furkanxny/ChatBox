@@ -11,11 +11,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="380.0" prefWidth="379.0" style="-fx-background-color: #111111;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.LogInController">
+<BorderPane prefHeight="380.0" prefWidth="379.0" style="-fx-background-color: #116666;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.LogInController">
    <center>
       <Pane prefHeight="380.0" prefWidth="380.0" style="-fx-background-radius: 0;" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="178.0" layoutY="332.0" maxHeight="5.0" maxWidth="5.0" minHeight="5.0" minWidth="5.0" mnemonicParsing="false" onAction="#changeSceneToChat" prefHeight="5.0" prefWidth="5.0" text="Go To AI">
+            <Button layoutX="192.0" layoutY="322.0" maxHeight="5.0" maxWidth="5.0" minHeight="5.0" minWidth="5.0" mnemonicParsing="false" onAction="#changeSceneToChat" prefHeight="5.0" prefWidth="5.0" text="Go To AI">
                <graphic>
                   <ImageView fitHeight="142.0" fitWidth="285.0" pickOnBounds="true" preserveRatio="true">
                      <image>

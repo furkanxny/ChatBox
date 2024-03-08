@@ -35,17 +35,13 @@ public class LogInController {
             Parent secondViewRoot = loader.load();
 
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
             Scene scene = new Scene(secondViewRoot);
             stage.setScene(scene);
+            stage.setResizable(false);
             stage.centerOnScreen();
 
         } else {
             System.out.println(firebase.loginUser(emailV, passV));
         }
-
-
     }
-
-
 }
