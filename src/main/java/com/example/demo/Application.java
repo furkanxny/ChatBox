@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
-//init firestoredb
+
 public class Application extends javafx.application.Application {
     public static Firestore fstore;
     private final FirestoreContext contxtFirebase = new FirestoreContext();
