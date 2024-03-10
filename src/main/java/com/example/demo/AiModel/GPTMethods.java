@@ -19,12 +19,13 @@ public class GPTMethods {
     private int messageProcessCount = 0;
 
     int counter;
+
     public GPTMethods() {
         this.stringBuilder = new StringBuilder();
     }
 
 
-    public int counter(){
+    public int counter() {
         counter++;
         return counter;
     }
@@ -57,8 +58,7 @@ public class GPTMethods {
                     String newResponse = organizeStringByWordCount(textContent, 20);
                     outputTF.setText(newResponse);
 
-                    stringBuilder.append("ChatGPT: ").append(newResponse).append("n/");
-
+                    stringBuilder.append("ChatGPT:").append(newResponse).append("\n");
                     messageProcessCount++;
                     inputTF.clear();
                     break;
@@ -87,7 +87,9 @@ public class GPTMethods {
     }
 
     public void initializeAssistant(TextArea outputTF, TextField inputTF, String initialPrompt) {
-        stringBuilder.append("user :").append(inputTF.getText()).append("n/");
+        stringBuilder.append("User: ");
+        stringBuilder.append(inputTF.getText());
+        stringBuilder.append("\n");
         Properties properties = new Properties();
         long DELAY = 3;
 
@@ -132,7 +134,7 @@ public class GPTMethods {
             ThreadResponseDTO thread = client.createThread();
             String request = String.valueOf(inputTF);
             System.out.println(request);
-            client.sendMessage(thread.id(), "user",request);
+            client.sendMessage(thread.id(), "user", request);
             RunResponseDTO run = client.runMessage(thread.id(), assistant.id());
 
             waitUntilRunIsFinished(client, thread, run, DELAY);

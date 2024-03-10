@@ -37,7 +37,7 @@
             <ToggleGroup fx:id="promptToggleGroup" />
          </toggleGroup>
       </RadioButton>
-      <RadioButton fx:id="angeryRadioButton" layoutX="960.0" layoutY="70.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="90.0" selected="true" style="-fx-background-color: #3498db; -fx-background-radius: 20;" text="Angry" toggleGroup="$promptToggleGroup">
+      <RadioButton fx:id="angeryRadioButton" layoutX="960.0" layoutY="70.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="90.0" selected="true" style="-fx-background-color: #3498db; -fx-background-radius: 20;" text="Annoyed" toggleGroup="$promptToggleGroup">
          <font>
             <Font name="Chalkboard" size="13.0" />
          </font>
@@ -47,7 +47,7 @@
             <Font name="Chalkboard" size="13.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="statelessRadioButton" layoutX="840.0" layoutY="70.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="90.0" selected="true" style="-fx-background-color: #CCAAAA; -fx-background-radius: 20;" text="stateless" toggleGroup="$promptToggleGroup">
+      <RadioButton fx:id="statelessRadioButton" layoutX="840.0" layoutY="70.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="90.0" selected="true" style="-fx-background-color: #CCAAAA; -fx-background-radius: 20;" text="Chatting" toggleGroup="$promptToggleGroup">
          <font>
             <Font name="Chalkboard" size="13.0" />
          </font>

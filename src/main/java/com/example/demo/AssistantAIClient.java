@@ -21,7 +21,7 @@ public class AssistantAIClient {
     private static final String SLASH = "/";
 
     public AssistantAIClient(Properties properties) {
-        this.apiKey = properties.getProperty("openai.api.key");
+        this.apiKey = System.getenv("CHATGPT.API.KEY");
         this.assistantsUrl = properties.getProperty("openai.assistants.url");
         this.threadsUrl = properties.getProperty("openai.threads.url");
         this.httpClient = HttpClient.newHttpClient();

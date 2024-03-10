@@ -13,7 +13,7 @@ import java.util.List;
 
 public class OpenAIRequestHandler {
     private static final String API_URL = "https://api.openai.com/v1/chat/completions";
-    private static final String API_KEY = "Secret Key";
+    private static final String API_KEY = System.getenv("CHATGPT_API_KEY");
     private static final OkHttpClient client = new OkHttpClient();
     private static final Gson gson = new Gson();
 
