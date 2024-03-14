@@ -21,7 +21,7 @@ public class AssistantAIClient {
     private static final String SLASH = "/";
 
     public AssistantAIClient(Properties properties) {
-        this.apiKey = System.getenv("CHATGPT.API.KEY");
+        this.apiKey = System.getenv("CHATGPT_API_KEY");
         this.assistantsUrl = properties.getProperty("openai.assistants.url");
         this.threadsUrl = properties.getProperty("openai.threads.url");
         this.httpClient = HttpClient.newHttpClient();
@@ -39,7 +39,7 @@ public class AssistantAIClient {
     }
 
     public AssistantResponseDTO createAssistant(String initialPrompt) throws Exception {
-        AssistantRequestDTO dto = new AssistantRequestDTO(GPT3_5_TURBO.getName(), initialPrompt);
+        AssistantRequestDTO dto = new AssistantRequestDTO(GPT4_1106_PREVIEW.getName(), initialPrompt);
         String response = post(assistantsUrl, dto);
         return objectMapper.readValue(response, AssistantResponseDTO.class);
     }

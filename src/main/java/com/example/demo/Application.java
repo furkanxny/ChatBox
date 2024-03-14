@@ -18,7 +18,7 @@ public class Application extends javafx.application.Application {
         fstore = contxtFirebase.firebase();
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("LogIn.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 400, 400);
-        stage.initStyle(StageStyle.UNDECORATED);
+        //stage.initStyle(StageStyle.UNDECORATED);
         stage.setTitle("AIFX");
         stage.setScene(scene);
         stage.setResizable(false);
