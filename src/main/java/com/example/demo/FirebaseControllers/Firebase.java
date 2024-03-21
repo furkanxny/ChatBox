@@ -17,9 +17,11 @@ public class Firebase {
     private boolean key;
     private Person person;
     private static String ID;
-
     private static int messageCount;
     private Firestore firestore = Application.fstore;
+    public ObservableList<Person> getListOfUsers() {
+        return listOfUsers;
+    }
 
     public void setID(String ID) {
         this.ID = ID;
@@ -27,12 +29,7 @@ public class Firebase {
 
     public void setMessageCount(int messageCount){this.messageCount = messageCount;}
 
-    public ObservableList<Person> getListOfUsers() {
-        return listOfUsers;
-    }
-
     public Firebase() {
-
     }
 
     public void setMessageLimit(Text count){
@@ -51,7 +48,7 @@ public class Firebase {
         List<QueryDocumentSnapshot> documents;
         try {
             documents = future.get().getDocuments();
-            if (documents.size() > 0) {
+            if (!documents.isEmpty()) {
                 System.out.println("Outing data from firabase database....");
                 listOfUsers.clear();
                 for (QueryDocumentSnapshot document : documents) {
@@ -78,6 +75,21 @@ public class Firebase {
         return key;
     }
 
+    public boolean updateDatabase(){
+        DocumentReference docRef = Application.fstore.collection("Persons")
+                .document(ID);
+        Map<String, Object> updates = new HashMap<>();
+        updates.put("messageCount", messageCount);
+
+        ApiFuture<WriteResult> writeResult = docRef.update(updates);
+        try {
+            writeResult.get();
+            return true;
+        } catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
     public void addData(String name, String lastName, String email, String password, int age) {
         readFirebase();
         DocumentReference docRef = Application.fstore.collection("Persons").document(UUID.randomUUID().toString());

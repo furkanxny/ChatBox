@@ -31,10 +31,6 @@ public class Person {
         return messageCount;
     }
 
-    public void setMessageCount(String MessageCount) {
-        this.messageCount = messageCount;
-    }
-
     public String getEmail() {
         return email;
     }

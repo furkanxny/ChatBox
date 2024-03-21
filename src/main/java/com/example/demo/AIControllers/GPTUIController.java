@@ -40,18 +40,11 @@ public class GPTUIController implements Initializable {
     private RadioButton angeryRadioButton;
     GPTMethods gptMethods = new GPTMethods();
     private String initialPrompt;
-
     Firebase firebase = new Firebase();
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         firebase.setMessageLimit(count);
-    }
-
-
-    private void checkMessageCount(){
-
     }
 
 
@@ -63,9 +56,7 @@ public class GPTUIController implements Initializable {
                 System.out.println("Sorry, unable to find application.properties");
                 return;
             }
-
             properties.load(input);
-
         }
 
         if (friendlyRadioButton.isSelected()) {
@@ -84,25 +75,23 @@ public class GPTUIController implements Initializable {
 
     @FXML
     void enterButtonOnAction(ActionEvent event) throws IOException {
-        //checkMessageCount();
         if(firebase.getMessageCount() <= -1){
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("No");
-            alert.setContentText("Yes");
-            alert.setHeaderText("Ok");
+            alert.setTitle("OVER LIMIT");
+            alert.setHeaderText("YOU HAVE USED ALL YOUR CREDIT!");
+            alert.setContentText("You have used all your credits but you can buy more.");
             alert.showAndWait();
             return;
         }
-        else
         firebase.setMessageLimit(count);
         enterButton.setDisable(true);
         setInitialPrompt();
-        //count.setText(String.valueOf(gptMethods.counter()));
         PauseTransition pause = new PauseTransition(Duration.seconds(5));
         pause.setOnFinished(event1 -> enterButton.setDisable(false));
         pause.play();
-
+        firebase.updateDatabase();
     }
+
 
 
 
