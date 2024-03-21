@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.FirebaseControllers.Firebase;
 import com.example.demo.dto.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -19,6 +20,8 @@ public class AssistantAIClient {
     private final HttpClient httpClient;
     private final ObjectMapper objectMapper;
     private static final String SLASH = "/";
+
+
 
     public AssistantAIClient(Properties properties) {
         this.apiKey = System.getenv("CHATGPT_API_KEY");

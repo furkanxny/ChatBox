@@ -3,20 +3,25 @@ package com.example.demo.AIControllers;
 import com.example.demo.AiModel.GPTMethods;
 
 
+import com.example.demo.FirebaseControllers.Firebase;
+import com.example.demo.Models.Person;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 import java.net.http.HttpClient;
 import java.util.Properties;
+import java.util.ResourceBundle;
 
-public class GPTUIController {
+public class GPTUIController implements Initializable {
     @FXML
     private Text count;
     @FXML
@@ -36,10 +41,19 @@ public class GPTUIController {
     GPTMethods gptMethods = new GPTMethods();
     private String initialPrompt;
 
+    Firebase firebase = new Firebase();
 
-    @FXML
-    private void initialize(Properties properties) {
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        firebase.setMessageLimit(count);
     }
+
+
+    private void checkMessageCount(){
+
+    }
+
 
     private void setInitialPrompt() throws IOException {
         Properties properties = new Properties();
@@ -70,14 +84,26 @@ public class GPTUIController {
 
     @FXML
     void enterButtonOnAction(ActionEvent event) throws IOException {
+        //checkMessageCount();
+        if(firebase.getMessageCount() <= -1){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("No");
+            alert.setContentText("Yes");
+            alert.setHeaderText("Ok");
+            alert.showAndWait();
+            return;
+        }
+        else
+        firebase.setMessageLimit(count);
         enterButton.setDisable(true);
         setInitialPrompt();
-        count.setText(String.valueOf(gptMethods.counter()));
+        //count.setText(String.valueOf(gptMethods.counter()));
         PauseTransition pause = new PauseTransition(Duration.seconds(5));
         pause.setOnFinished(event1 -> enterButton.setDisable(false));
         pause.play();
 
     }
+
 
 
 }

@@ -6,6 +6,7 @@ import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.text.Text;
 
 import java.util.*;
 import java.util.concurrent.ExecutionException;
@@ -16,11 +17,15 @@ public class Firebase {
     private boolean key;
     private Person person;
     private static String ID;
+
+    private static int messageCount;
     private Firestore firestore = Application.fstore;
 
     public void setID(String ID) {
         this.ID = ID;
     }
+
+    public void setMessageCount(int messageCount){this.messageCount = messageCount;}
 
     public ObservableList<Person> getListOfUsers() {
         return listOfUsers;
@@ -28,6 +33,14 @@ public class Firebase {
 
     public Firebase() {
 
+    }
+
+    public void setMessageLimit(Text count){
+        count.setText(String.valueOf(messageCount--));
+    }
+
+    public int getMessageCount(){
+        return messageCount;
     }
 
     ;
@@ -49,8 +62,10 @@ public class Firebase {
                             String.valueOf(document.getData().get("lastName")),
                             String.valueOf(document.getData().get("email")),
                             String.valueOf(document.getData().get("Password")),
-                            Integer.parseInt(document.getData().get("age").toString())
+                            Integer.parseInt(document.getData().get("age").toString()),
+                            Integer.parseInt(document.getData().get("messageCount").toString())
                     );
+                    setMessageCount(Integer.parseInt(document.getData().get("messageCount").toString()));
                     listOfUsers.add(person);
                 }
             } else {

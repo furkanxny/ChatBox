@@ -8,12 +8,15 @@ public class Person {
     private String password;
     private int age;
 
-    public Person(String name, String lastName, String email, String password, int age) {
+    private int messageCount;
+
+    public Person(String name, String lastName, String email, String password, int age, int messageCount) {
         this.name = name;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
         this.age = age;
+        this.messageCount = messageCount;
     }
 
     public String getName() {
@@ -22,6 +25,14 @@ public class Person {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getMessageCount () {
+        return messageCount;
+    }
+
+    public void setMessageCount(String MessageCount) {
+        this.messageCount = messageCount;
     }
 
     public String getEmail() {
