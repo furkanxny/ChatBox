@@ -36,6 +36,10 @@ public class Firebase {
         count.setText(String.valueOf(messageCount--));
     }
 
+    public void setCount(Text count){
+        count.setText(String.valueOf(messageCount));
+    }
+
     public int getMessageCount(){
         return messageCount;
     }
