@@ -54,7 +54,7 @@
                   <Font name="Arial Bold" size="15.0" />
                </font>
             </Label>
-            <Text fx:id="creditsText" layoutX="64.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+            <Text fx:id="creditsText" layoutX="60.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
                <font>
                   <Font name="Arial Bold" size="18.0" />
                </font>

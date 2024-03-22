@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -41,7 +42,12 @@ public class LogInController {
             stage.centerOnScreen();
 
         } else {
-            System.out.println(firebase.loginUser(emailV, passV));
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("ERROR");
+            alert.setHeaderText("YOUR CREDENTIALS ARE WRONG");
+            alert.setContentText("You have entered wrong email or passport");
+            alert.showAndWait();
+            return;
         }
     }
 }

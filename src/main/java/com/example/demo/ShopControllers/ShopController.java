@@ -8,10 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -55,15 +52,35 @@ public class ShopController implements Initializable {
 
 
     public void setNewCredits(){
+        if(!amountTextField.getText().isEmpty() && Integer.parseInt(amountTextField.getText()) > 0 && Integer.parseInt(amountTextField.getText()) < 20){
        firebase.setMessageCount(tempCount + Integer.parseInt(amountTextField.getText()));
        firebase.updateDatabase();
        firebase.setCount(creditsText);
        tempCount = firebase.getMessageCount();
-       amountTextField.clear();
+       amountTextField.clear();}
+        else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("ERROR");
+            alert.setHeaderText("WRONG INPUT");
+            alert.setContentText("Please enter an amount between 1 - 20");
+            alert.showAndWait();
+        }
+
     }
     @FXML
     void buyButtonOnAction(ActionEvent event) {
-        setNewCredits();
+        if(termsButton.isSelected()){
+            setNewCredits();
+        }
+        else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("ERROR");
+            alert.setHeaderText("YOU HAVE NOT ACCEPTED THE TERM AND AGREEMENTS!");
+            alert.setContentText("You have to accept the terms and the agreements to buy more credits");
+            alert.showAndWait();
+            return;
+
+        }
     }
 
     @FXML
