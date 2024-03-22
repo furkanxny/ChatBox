@@ -27,7 +27,8 @@ public class Firebase {
         this.ID = ID;
     }
 
-    public void setMessageCount(int messageCount){this.messageCount = messageCount;}
+    public void setMessageCount(int messageCount){
+        Firebase.messageCount = messageCount;}
 
     public Firebase() {
     }

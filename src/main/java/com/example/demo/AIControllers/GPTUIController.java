@@ -9,9 +9,14 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
@@ -22,6 +27,9 @@ import java.util.Properties;
 import java.util.ResourceBundle;
 
 public class GPTUIController implements Initializable {
+    @FXML
+    private Button button;
+
     @FXML
     private Text count;
     @FXML
@@ -70,6 +78,19 @@ public class GPTUIController implements Initializable {
         }
         gptMethods.initializeAssistant(outputTF, inputTF, initialPrompt);
         System.out.println(initialPrompt);
+    }
+
+    @FXML
+    void buttonOn(ActionEvent event) throws IOException {
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Shop.fxml"));
+        Parent secondViewRoot = loader.load();
+
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(secondViewRoot);
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.centerOnScreen();
     }
 
 

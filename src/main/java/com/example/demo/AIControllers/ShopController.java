@@ -44,18 +44,17 @@ public class ShopController implements Initializable {
     tempCount = firebase.getMessageCount();
     }
 
-    public void setCreditsText(){
-        creditsText.setText();
-    }
 
-    public void setTotal(){
-        total  = .33 * Double.parseDouble((amountTextField.getText()));
-        totalLabel.setText(String.valueOf(total));
-        tempCount = tempCount + Integer.parseInt( amountTextField.getText());
+    public void setNewCredits(){
+       firebase.setMessageCount(tempCount + Integer.parseInt(amountTextField.getText()));
+       firebase.updateDatabase();
+       firebase.setCount(creditsText);
+       tempCount = firebase.getMessageCount();
+       amountTextField.clear();
     }
     @FXML
     void buyButtonOnAction(ActionEvent event) {
-
+        setNewCredits();
     }
 
 

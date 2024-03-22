@@ -31,7 +31,7 @@ public class LogInController {
         String passV = passwordTF.getText();
         firebase.readFirebase();
         if (firebase.loginUser(emailV, passV)) {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("GPT-UI.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Shop.fxml"));
             Parent secondViewRoot = loader.load();
 
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
