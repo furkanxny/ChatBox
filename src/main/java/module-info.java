@@ -26,4 +26,6 @@ module com.example.demo {
     exports com.example.demo;
     exports com.example.demo.AIControllers;
     opens com.example.demo.AIControllers to javafx.fxml;
+    exports com.example.demo.ShopControllers;
+    opens com.example.demo.ShopControllers to javafx.fxml;
 }

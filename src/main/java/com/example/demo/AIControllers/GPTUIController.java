@@ -52,7 +52,7 @@ public class GPTUIController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        firebase.setMessageLimit(count);
+        firebase.setCount(count);
     }
 
 
@@ -83,7 +83,20 @@ public class GPTUIController implements Initializable {
     @FXML
     void buttonOn(ActionEvent event) throws IOException {
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Shop.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/demo/Shop.fxml"));
+        Parent secondViewRoot = loader.load();
+
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(secondViewRoot);
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.centerOnScreen();
+    }
+
+    @FXML
+    void switchProfile(ActionEvent event) throws IOException {
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/demo/ShopProfile.fxml"));
         Parent secondViewRoot = loader.load();
 
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

@@ -52,11 +52,17 @@
             <Font name="Chalkboard" size="13.0" />
          </font>
       </RadioButton>
-      <Text fx:id="count" layoutX="145.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Count">
+      <Text fx:id="count" layoutX="161.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Count">
          <font>
             <Font name="Impact" size="21.0" />
          </font>
       </Text>
-      <Button fx:id="button" layoutX="356.0" layoutY="24.0" mnemonicParsing="false" onAction="#buttonOn" text="Button" />
+      <Button fx:id="button" layoutX="335.0" layoutY="12.0" mnemonicParsing="false" onAction="#buttonOn" prefHeight="20.0" prefWidth="100.0" style="-fx-background-radius: 30;" text="BUY CREDITS" />
+      <Label alignment="CENTER" layoutX="135.0" layoutY="11.0" prefHeight="27.0" prefWidth="70.0" text="Credits">
+         <font>
+            <Font name="Impact" size="21.0" />
+         </font>
+      </Label>
+      <Button layoutX="335.0" layoutY="50.0" mnemonicParsing="false" onAction="#switchProfile" prefHeight="20.0" prefWidth="100.0" style="-fx-background-radius: 30;" text="BUY PROFILE" />
    </children>
 </AnchorPane>
