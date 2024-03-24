@@ -11,7 +11,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -20,44 +19,37 @@ import java.util.ResourceBundle;
 public class ShopController implements Initializable {
 
     @FXML
-    private TextField amountTextField;
+    private TextField amountsWanted;
 
     @FXML
-    private Text creditsText;
-
-    @FXML
-    private Button buyButton;
-
-    @FXML
-    private Button goBackButton;
+    private Text avaliableCredits;
 
     @FXML
     private RadioButton termsButton;
 
-    @FXML
-    private Label totalLabel;
-
     private int tempCount = 0;
 
-    private double total = 0;
     Firebase firebase = new Firebase();
 
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-    firebase.setCount(creditsText);
-    tempCount = firebase.getMessageCount();
+    firebase.setCredit(avaliableCredits);
+    tempCount = firebase.getCredit();
     }
 
 
     public void setNewCredits(){
-        if(!amountTextField.getText().isEmpty() && Integer.parseInt(amountTextField.getText()) > 0 && Integer.parseInt(amountTextField.getText()) < 20){
-       firebase.setMessageCount(tempCount + Integer.parseInt(amountTextField.getText()));
+        if(!amountsWanted.getText().isEmpty() && Integer.parseInt(amountsWanted.getText()) > 0 && Integer.parseInt(amountsWanted.getText()) < 20){
+       firebase.setNewCredit(tempCount + Integer.parseInt(amountsWanted.getText()));
        firebase.updateDatabase();
-       firebase.setCount(creditsText);
-       tempCount = firebase.getMessageCount();
-       amountTextField.clear();}
+       firebase.setCredit(avaliableCredits);
+       tempCount = firebase.getCredit();
+       amountsWanted.clear();
+       termsButton.setSelected(false);
+        }
+
         else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("ERROR");
@@ -67,6 +59,7 @@ public class ShopController implements Initializable {
         }
 
     }
+
     @FXML
     void buyButtonOnAction(ActionEvent event) {
         if(termsButton.isSelected()){
@@ -78,13 +71,11 @@ public class ShopController implements Initializable {
             alert.setHeaderText("YOU HAVE NOT ACCEPTED THE TERM AND AGREEMENTS!");
             alert.setContentText("You have to accept the terms and the agreements to buy more credits");
             alert.showAndWait();
-            return;
-
         }
     }
 
     @FXML
-    void goBackButtonOnAction(ActionEvent event) throws IOException {
+    void goToChatOnAction(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/demo/GPT-UI.fxml"));
         Parent secondViewRoot = loader.load();
 
@@ -96,7 +87,7 @@ public class ShopController implements Initializable {
     }
 
     @FXML
-    void switchProfile(ActionEvent event) throws IOException {
+    void goToProfileOnAction(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/demo/ShopProfile.fxml"));
         Parent secondViewRoot = loader.load();
 

@@ -11,7 +11,7 @@
 
 <BorderPane xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.ShopControllers.ShopController">
    <center>
-      <Pane prefHeight="500.0" prefWidth="660.0" style="-fx-background-color: BEFF81;" BorderPane.alignment="CENTER">
+      <Pane prefHeight="500.0" prefWidth="660.0" style="-fx-background-color: A1F2F5;" BorderPane.alignment="CENTER">
          <children>
             <Text layoutX="163.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BUY CREDITS">
                <font>
@@ -23,12 +23,12 @@
                   <Font name="Arial Bold" size="28.0" />
                </font>
             </Label>
-            <TextField fx:id="amountTextField" alignment="CENTER" layoutX="334.0" layoutY="181.0" prefHeight="41.0" prefWidth="63.0" style="-fx-border-color: #0598ff; -fx-background-color: transparent; -fx-border-width: 0px 0px 2px;">
+            <TextField fx:id="amountsWanted" alignment="CENTER" layoutX="334.0" layoutY="190.0" prefHeight="41.0" prefWidth="63.0" style="-fx-border-color: #0598ff; -fx-background-color: transparent; -fx-border-width: 0px 0px 2px;">
                <font>
                   <Font size="20.0" />
                </font>
             </TextField>
-            <Label fx:id="totalLabel" alignment="CENTER" layoutX="359.0" layoutY="259.0" prefHeight="23.0" prefWidth="5.0" text="\$">
+            <Label alignment="CENTER" layoutX="359.0" layoutY="259.0" prefHeight="23.0" prefWidth="5.0" text="\$">
                <font>
                   <Font size="28.0" />
                </font>
@@ -38,9 +38,9 @@
                   <Font name="Arial Bold" size="28.0" />
                </font>
             </Label>
-            <Button fx:id="buyButton" layoutX="313.0" layoutY="399.0" mnemonicParsing="false" onAction="#buyButtonOnAction" prefHeight="38.0" prefWidth="72.0" style="-fx-background-radius: 20;" text="BUY">
+            <Button layoutX="291.0" layoutY="415.0" mnemonicParsing="false" onAction="#buyButtonOnAction" prefHeight="38.0" prefWidth="91.0" style="-fx-background-radius: 20; -fx-background-color: FF5D29;" text="BUY">
                <font>
-                  <Font name="Arial Bold" size="15.0" />
+                  <Font name="Phosphate Inline" size="16.0" />
                </font>
             </Button>
             <TextField alignment="CENTER" disable="true" layoutX="185.0" layoutY="224.0" prefHeight="28.0" prefWidth="261.0" style="-fx-border-color: #000000; -fx-background-color: transparent; -fx-border-width: 0px 0px 2px;" />
@@ -49,18 +49,24 @@
                   <Font size="10.0" />
                </font>
             </RadioButton>
-            <Label layoutX="43.0" layoutY="39.0" text="Credits">
+            <Label layoutX="25.0" layoutY="32.0" text="Credits">
                <font>
                   <Font name="Arial Bold" size="15.0" />
                </font>
             </Label>
-            <Text fx:id="creditsText" layoutX="60.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+            <Text fx:id="avaliableCredits" layoutX="40.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
                <font>
                   <Font name="Arial Bold" size="18.0" />
                </font>
             </Text>
-            <Button fx:id="goBackButton" layoutX="472.0" layoutY="406.0" mnemonicParsing="false" onAction="#goBackButtonOnAction" prefHeight="26.0" prefWidth="128.0" style="-fx-background-radius: 30;" text="CHAT GPT" />
-            <Button layoutX="469.0" layoutY="447.0" mnemonicParsing="false" onAction="#switchProfile" prefHeight="26.0" prefWidth="128.0" style="-fx-background-radius: 30;" text="PROFILE SHOP" />
+            <Button layoutX="472.0" layoutY="406.0" mnemonicParsing="false" onAction="#goToChatOnAction" prefHeight="26.0" prefWidth="128.0" style="-fx-background-radius: 30; -fx-background-color: #1FFF00;" text="CHATGPT">
+               <font>
+                  <Font name="Phosphate Inline" size="13.0" />
+               </font></Button>
+            <Button layoutX="472.0" layoutY="445.0" mnemonicParsing="false" onAction="#goToProfileOnAction" prefHeight="26.0" prefWidth="128.0" style="-fx-background-radius: 30; -fx-background-color: #1FFF00;" text="PROFILE SHOP">
+               <font>
+                  <Font name="Phosphate Inline" size="13.0" />
+               </font></Button>
          </children>
       </Pane>
    </center>

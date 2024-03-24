@@ -7,17 +7,43 @@ public class Person {
     private String email;
     private String password;
     private int age;
+    private int gpt1;
+    private int gpt2;
+    private int gpt3;
+    private int gpt4;
+
 
     private int messageCount;
 
-    public Person(String name, String lastName, String email, String password, int age, int messageCount) {
+    public Person(String name, String lastName, String email, String password, int age, int messageCount, int gpt1, int gpt2, int gpt3, int gpt4) {
         this.name = name;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
         this.age = age;
         this.messageCount = messageCount;
+        this.gpt1 = gpt1;
+        this.gpt2 = gpt2;
+        this.gpt3 = gpt3;
+        this.gpt4 = gpt4;
     }
+
+
+
+    public int getGpt1(){return gpt1;}
+    public void setGpt1(int gpt1){this.gpt1 = gpt1;}
+
+
+    public int getGpt2(){return gpt2;}
+    public void setGpt2(int gpt2){this.gpt2 = gpt2;}
+
+
+    public int getGpt3(){return gpt3;}
+    public void setGpt3(int gpt3){this.gpt3 = gpt1;}
+
+
+    public int getGpt4(){return gpt4;}
+    public void setGpt4(int gpt4){this.gpt1 = gpt4;}
 
     public String getName() {
         return name;

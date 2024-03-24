@@ -12,7 +12,13 @@
             <Font name="Phosphate Inline" size="40.0" />
          </font>
       </Label>
-      <Button layoutX="334.0" layoutY="57.0" mnemonicParsing="false" onAction="#switchCredits" style="-fx-background-radius: 30;" text="SHOP CREDITS" />
-      <Button layoutX="156.0" layoutY="57.0" mnemonicParsing="false" onAction="#switchGPT" prefHeight="26.0" prefWidth="105.0" style="-fx-background-radius: 30;" text="CHAT GPT" />
+      <Button layoutX="334.0" layoutY="57.0" mnemonicParsing="false" onAction="#goToCreditsOnAction" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="SHOP CREDITS">
+         <font>
+            <Font name="Phosphate Inline" size="13.0" />
+         </font></Button>
+      <Button layoutX="156.0" layoutY="57.0" mnemonicParsing="false" onAction="#goToChatOnAction" prefHeight="26.0" prefWidth="105.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="CHATGPT">
+         <font>
+            <Font name="Phosphate Inline" size="13.0" />
+         </font></Button>
    </children>
 </AnchorPane>

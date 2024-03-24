@@ -27,7 +27,7 @@ public class LogInController {
     }
 
     @FXML
-    void changeSceneToChat(ActionEvent event) throws IOException {
+    void goToChatOnAction(ActionEvent event) throws IOException {
         String emailV = emailTF.getText();
         String passV = passwordTF.getText();
         firebase.readFirebase();
@@ -47,7 +47,6 @@ public class LogInController {
             alert.setHeaderText("YOUR CREDENTIALS ARE WRONG");
             alert.setContentText("You have entered wrong email or passport");
             alert.showAndWait();
-            return;
         }
     }
 }

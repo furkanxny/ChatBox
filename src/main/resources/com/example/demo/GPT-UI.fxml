@@ -10,13 +10,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1350.0" style="-fx-background-color: #BBDDBB;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.AIControllers.GPTUIController">
+<AnchorPane prefHeight="800.0" prefWidth="1350.0" style="-fx-background-color: #323232;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.AIControllers.GPTUIController">
    <children>
       <TextArea fx:id="outputTF" disable="true" editable="false" layoutX="79.0" layoutY="100.0" opacity="0.87" prefHeight="557.0" prefWidth="1224.0">
          <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
          </font></TextArea>
-      <TextField fx:id="inputTF" alignment="CENTER" layoutX="288.0" layoutY="671.0" prefHeight="52.0" prefWidth="679.0" promptText="prompt" style="-fx-background-radius: 30; -fx-border-color: #87CEEB; -fx-border-radius: 50; -fx-background-color: transparent;">
+      <TextField fx:id="inputTF" alignment="CENTER" layoutX="288.0" layoutY="671.0" prefHeight="52.0" prefWidth="679.0" promptText="prompt" style="-fx-background-radius: 30; -fx-border-color: #87CEEB; -fx-border-radius: 50; -fx-background-color: transparent; -fx-background-color: ABABAB;">
          <font>
             <Font name="Arial Rounded MT Bold" size="25.0" />
          </font></TextField>
@@ -37,7 +37,7 @@
             <ToggleGroup fx:id="promptToggleGroup" />
          </toggleGroup>
       </RadioButton>
-      <RadioButton fx:id="angeryRadioButton" layoutX="960.0" layoutY="70.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="90.0" selected="true" style="-fx-background-color: #3498db; -fx-background-radius: 20;" text="Annoyed" toggleGroup="$promptToggleGroup">
+      <RadioButton fx:id="angryRadioButton" layoutX="960.0" layoutY="70.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="90.0" selected="true" style="-fx-background-color: #3498db; -fx-background-radius: 20;" text="Angry" toggleGroup="$promptToggleGroup">
          <font>
             <Font name="Chalkboard" size="13.0" />
          </font>
@@ -47,22 +47,28 @@
             <Font name="Chalkboard" size="13.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="statelessRadioButton" layoutX="840.0" layoutY="70.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="90.0" selected="true" style="-fx-background-color: #CCAAAA; -fx-background-radius: 20;" text="Chatting" toggleGroup="$promptToggleGroup">
+      <RadioButton fx:id="statelessRadioButton" layoutX="840.0" layoutY="70.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="90.0" selected="true" style="-fx-background-color: #CCAAAA; -fx-background-radius: 20;" text="Stateless" toggleGroup="$promptToggleGroup">
          <font>
             <Font name="Chalkboard" size="13.0" />
          </font>
       </RadioButton>
-      <Text fx:id="count" layoutX="161.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Count">
+      <Text fx:id="count" fill="#09c0c9" layoutX="161.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Count">
          <font>
             <Font name="Impact" size="21.0" />
          </font>
       </Text>
-      <Button fx:id="button" layoutX="335.0" layoutY="12.0" mnemonicParsing="false" onAction="#buttonOn" prefHeight="20.0" prefWidth="100.0" style="-fx-background-radius: 30;" text="BUY CREDITS" />
-      <Label alignment="CENTER" layoutX="135.0" layoutY="11.0" prefHeight="27.0" prefWidth="70.0" text="Credits">
+      <Button layoutX="335.0" layoutY="12.0" mnemonicParsing="false" onAction="#goToCreditsOnAction" opacity="0.7" prefHeight="30.0" prefWidth="120.0" style="-fx-background-radius: 50; -fx-background-color: #61FF12;" text="BUY CREDITS">
+         <font>
+            <Font name="Phosphate Inline" size="14.0" />
+         </font></Button>
+      <Label alignment="CENTER" layoutX="135.0" layoutY="11.0" prefHeight="27.0" prefWidth="70.0" text="Credits" textFill="#00b3e4">
          <font>
             <Font name="Impact" size="21.0" />
          </font>
       </Label>
-      <Button layoutX="335.0" layoutY="50.0" mnemonicParsing="false" onAction="#switchProfile" prefHeight="20.0" prefWidth="100.0" style="-fx-background-radius: 30;" text="BUY PROFILE" />
+      <Button layoutX="335.0" layoutY="50.0" mnemonicParsing="false" onAction="#goToProfileOnAction" opacity="0.7" prefHeight="30.0" prefWidth="120.0" style="-fx-background-radius: 50; -fx-background-color: #61FF12;" text="BUY PROFILE">
+         <font>
+            <Font name="Phosphate Inline" size="14.0" />
+         </font></Button>
    </children>
 </AnchorPane>

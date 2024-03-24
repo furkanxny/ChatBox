@@ -1,11 +1,7 @@
 package com.example.demo.AIControllers;
 
 import com.example.demo.AiModel.GPTMethods;
-
-
 import com.example.demo.FirebaseControllers.Firebase;
-import com.example.demo.Models.Person;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,18 +18,12 @@ import javafx.util.Duration;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
-import java.net.http.HttpClient;
 import java.util.Properties;
 import java.util.ResourceBundle;
 
 public class GPTUIController implements Initializable {
     @FXML
-    private Button button;
-
-    @FXML
     private Text count;
-    @FXML
-    private Button enterButton;
     @FXML
     private TextField inputTF;
     @FXML
@@ -41,20 +31,24 @@ public class GPTUIController implements Initializable {
     @FXML
     private RadioButton statelessRadioButton;
     @FXML
-    private RadioButton friendlyRadioButton;
+    private RadioButton angryRadioButton;
     @FXML
     private RadioButton stupidRadioButton;
     @FXML
-    private RadioButton angeryRadioButton;
+    private RadioButton friendlyRadioButton;
+
+    @FXML
+    private Button enterButton;
     GPTMethods gptMethods = new GPTMethods();
     private String initialPrompt;
     Firebase firebase = new Firebase();
 
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        firebase.setCount(count);
+        firebase.setCredit(count);
+        firebase.setChatGPTModels(statelessRadioButton, angryRadioButton, stupidRadioButton, friendlyRadioButton);
     }
-
 
     private void setInitialPrompt() throws IOException {
         Properties properties = new Properties();
@@ -66,10 +60,9 @@ public class GPTUIController implements Initializable {
             }
             properties.load(input);
         }
-
         if (friendlyRadioButton.isSelected()) {
             initialPrompt = properties.getProperty("openai.assistants.prompt.friendly");
-        } else if (angeryRadioButton.isSelected()) {
+        } else if (angryRadioButton.isSelected()) {
             initialPrompt = properties.getProperty("openai.assistants.prompt.annoyed");
         } else if (stupidRadioButton.isSelected()) {
             initialPrompt = properties.getProperty("openai.assistants.prompt.stupid");
@@ -81,11 +74,9 @@ public class GPTUIController implements Initializable {
     }
 
     @FXML
-    void buttonOn(ActionEvent event) throws IOException {
-
+    void goToCreditsOnAction(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/demo/Shop.fxml"));
         Parent secondViewRoot = loader.load();
-
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(secondViewRoot);
         stage.setScene(scene);
@@ -94,11 +85,9 @@ public class GPTUIController implements Initializable {
     }
 
     @FXML
-    void switchProfile(ActionEvent event) throws IOException {
-
+    void goToProfileOnAction(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/demo/ShopProfile.fxml"));
         Parent secondViewRoot = loader.load();
-
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(secondViewRoot);
         stage.setScene(scene);
@@ -109,7 +98,7 @@ public class GPTUIController implements Initializable {
 
     @FXML
     void enterButtonOnAction(ActionEvent event) throws IOException {
-        if(firebase.getMessageCount() <= -1){
+        if (firebase.getCredit() <= -1) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("OVER LIMIT");
             alert.setHeaderText("YOU HAVE USED ALL YOUR CREDIT!");
@@ -125,8 +114,6 @@ public class GPTUIController implements Initializable {
         pause.play();
         firebase.updateDatabase();
     }
-
-
 
 
 }

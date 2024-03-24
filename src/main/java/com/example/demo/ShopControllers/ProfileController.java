@@ -13,7 +13,7 @@ import java.io.IOException;
 public class ProfileController {
 
     @FXML
-    void switchCredits(ActionEvent event) throws IOException {
+    void goToCreditsOnAction(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/demo/Shop.fxml"));
         Parent secondViewRoot = loader.load();
 
@@ -25,10 +25,9 @@ public class ProfileController {
     }
 
     @FXML
-    void switchGPT(ActionEvent event) throws IOException {
+    void goToChatOnAction(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/demo/GPT-UI.fxml"));
         Parent secondViewRoot = loader.load();
-
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(secondViewRoot);
         stage.setScene(scene);
