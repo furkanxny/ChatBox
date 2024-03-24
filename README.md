@@ -66,10 +66,14 @@ Make sure to also include a `CONTRIBUTING.md` and a `LICENSE` file in your repos
 ```
 For more detailed inquiries, you can contact the project maintainers directly.
 
-
-![Screen Shot 2024-03-06 at 2 09 31 AM (2)](https://github.com/furkanxny/AIFX/assets/116584632/7865d28a-d4be-47f9-b278-6667d4efb134)
-
-
-![Screen Shot 2024-03-06 at 2 05 40 AM (2)](https://github.com/furkanxny/AIFX/assets/116584632/2df3ba2d-e799-43d3-aa1b-d618ffecf68b)
+Application Pictures
 
 
+SIGN IN PAGE
+<img width="538" alt="Screen Shot 2024-03-23 at 9 35 14 PM" src="https://github.com/furkanxny/AIFX/assets/116584632/440de81a-85ec-4c78-8f6b-99e131b92f8e">
+
+CHAT PAGE
+<img width="1372" alt="Screen Shot 2024-03-23 at 9 37 20 PM" src="https://github.com/furkanxny/AIFX/assets/116584632/4283af12-eda1-4bce-8920-3852b99e6ae6">
+
+CREDIT SHOP PAGE
+<img width="841" alt="Screen Shot 2024-03-23 at 9 37 58 PM" src="https://github.com/furkanxny/AIFX/assets/116584632/aadca369-a9ab-48a1-b132-c37480cb1fd9">
