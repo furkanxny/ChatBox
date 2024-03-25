@@ -16,6 +16,7 @@
       <Pane prefHeight="380.0" prefWidth="380.0" style="-fx-background-radius: 0;" BorderPane.alignment="CENTER">
          <children>
             <TextField fx:id="emailTF" alignment="CENTER" layoutX="82.0" layoutY="147.0" prefHeight="50.0" prefWidth="250.0" promptText="Email" style="-fx-border-color: #0598ff; -fx-background-color: transparent; -fx-border-width: 0px 0px 2px;" />
+            <PasswordField fx:id="passwordTF" alignment="CENTER" layoutX="82.0" layoutY="197.0" prefHeight="50.0" prefWidth="250.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px;" />
             <Button layoutX="192.0" layoutY="322.0" maxHeight="5.0" maxWidth="5.0" minHeight="5.0" minWidth="5.0" mnemonicParsing="false" onAction="#goToChatOnAction" prefHeight="5.0" prefWidth="5.0" text="Go To AI">
                <graphic>
                   <ImageView fitHeight="142.0" fitWidth="285.0" pickOnBounds="true" preserveRatio="true">
@@ -27,7 +28,6 @@
                <padding>
                   <Insets bottom="-50.0" right="280.0" />
                </padding></Button>
-            <PasswordField fx:id="passwordTF" alignment="CENTER" layoutX="82.0" layoutY="197.0" prefHeight="50.0" prefWidth="250.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px;" />
             <Label alignment="CENTER" layoutX="37.0" layoutY="27.0" prefHeight="99.0" prefWidth="309.0" text="Sign In">
                <font>
                   <Font name="Phosphate Inline" size="81.0" />

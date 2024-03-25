@@ -67,6 +67,26 @@ public class GPTMethods {
         }
     }
 
+    private void log2(MessagesListResponseDTO messages, TextArea outputTF, TextField inputTF) {
+        messageProcessCount = 0;
+        for (MessageResponseDTO message : messages.data()) {
+            if (messageProcessCount < 1) {
+                for (MessageResponseDTO.Content content : message.content()) {
+                    String textContent = content.text().value();
+                    System.out.println(textContent);
+
+                    String newResponse = organizeStringByWordCount(textContent, 20);
+                    outputTF.setText(newResponse);
+
+                    //stringBuilder.append("ChatGPT:").append(newResponse).append("\n");
+                    messageProcessCount++;
+                    inputTF.clear();
+                    break;
+                }
+            }
+        }
+    }
+
     private static boolean isRunDone(AssistantAIClient client, String threadId, String runId) {
         RunResponseDTO status;
         try {
@@ -118,7 +138,11 @@ public class GPTMethods {
         }
     }
 
+
     public void initializeAssistant2(TextArea outputTF, TextField inputTF, String initialPrompt) {
+//        stringBuilder.append("User: ");
+        stringBuilder.append(inputTF.getText());
+//        stringBuilder.append("\n");
         Properties properties = new Properties();
         long DELAY = 3;
 
@@ -132,7 +156,7 @@ public class GPTMethods {
             AssistantAIClient client = new AssistantAIClient(properties);
             AssistantResponseDTO assistant = client.createAssistant(initialPrompt);
             ThreadResponseDTO thread = client.createThread();
-            String request = String.valueOf(inputTF);
+            String request = String.valueOf(stringBuilder);
             System.out.println(request);
             client.sendMessage(thread.id(), "user", request);
             RunResponseDTO run = client.runMessage(thread.id(), assistant.id());
@@ -140,13 +164,12 @@ public class GPTMethods {
             waitUntilRunIsFinished(client, thread, run, DELAY);
 
             MessagesListResponseDTO allResponses = client.getMessages(thread.id());
-            log(allResponses, outputTF, inputTF);
-
+            log2(allResponses, outputTF, inputTF);
+            System.out.println(inputTF.toString());
         } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
-
     public static String organizeStringByWordCount(String input, int wordCount) {
         String[] words = input.split(" ");
         StringBuilder result = new StringBuilder();

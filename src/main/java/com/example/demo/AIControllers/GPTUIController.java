@@ -66,11 +66,14 @@ public class GPTUIController implements Initializable {
             initialPrompt = properties.getProperty("openai.assistants.prompt.annoyed");
         } else if (stupidRadioButton.isSelected()) {
             initialPrompt = properties.getProperty("openai.assistants.prompt.stupid");
-        } else {
+        } else if (statelessRadioButton.isSelected()){
             initialPrompt = properties.getProperty("openai.assistants.prompt.stateless");
+            gptMethods.initializeAssistant2(outputTF, inputTF, initialPrompt);
+            System.out.println();
+
         }
-        gptMethods.initializeAssistant(outputTF, inputTF, initialPrompt);
-        System.out.println(initialPrompt);
+//        gptMethods.initializeAssistant(outputTF, inputTF, initialPrompt);
+//        System.out.println(initialPrompt);
     }
 
     @FXML
