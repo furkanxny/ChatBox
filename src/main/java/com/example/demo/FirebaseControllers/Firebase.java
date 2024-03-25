@@ -6,9 +6,12 @@ import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.text.Text;
 
+import java.net.URL;
 import java.util.*;
 import java.util.concurrent.ExecutionException;
 
@@ -19,44 +22,28 @@ public class Firebase {
     private Person person;
     private static String ID;
     private static int messageCount;
-    private static int gpt1;
-    private static int gpt2;
-    private static int gpt3;
-    private static int gpt4;
+    private static int gpt1, gpt2, gpt3, gpt4, gpt5, gpt6, gpt7, gpt8, gpt9, gpt10, gpt11, gpt12;
+    static int[] gptArry = new int[]{gpt1, gpt2, gpt3, gpt4, gpt5, gpt6, gpt7, gpt8, gpt9, gpt10, gpt11, gpt12};
     private Firestore firestore = Application.fstore;
 
-    public ObservableList<Person> getListOfUsers() {
-        return listOfUsers;
-    }
 
     public Firebase() {
     }
 
-    public void setGpt1(int gpt1) {
-        this.gpt1 = gpt1;
+    public void setGpt(int gpt, int i) {
+        this.gptArry[i - 1] = gpt;
     }
 
-    public void setGpt2(int gpt2) {
-        this.gpt2 = gpt2;
+    public void buyGPT(int arrayCount){
+        this.gptArry[arrayCount] = 1;
     }
-
-    public void setGpt3(int gpt3) {
-        this.gpt3 = gpt3;
-    }
-
-    public void setGpt4(int gpt4) {
-        this.gpt4 = gpt4;
-    }
-
     public void setID(String ID) {
         this.ID = ID;
     }
 
-
     public void setNewCredit(int messageCount) {
         Firebase.messageCount = messageCount;
     }
-
 
     public void setMessageLimit(Text count) {
         count.setText(String.valueOf(messageCount--));
@@ -66,26 +53,28 @@ public class Firebase {
         count.setText(String.valueOf(messageCount));
     }
 
-    public void setChatGPTModels(RadioButton radioButton1, RadioButton radioButton2, RadioButton radioButton3, RadioButton radioButton4) {
-        if (Firebase.gpt1 == 0) {
-            radioButton1.setDisable(true);
+    public void setChatGPTModels(RadioButton[] radioButtonsArry) {
+        for (int i = 0; i < gptArry.length; i++) {
+            if (gptArry[i] == 0) {
+                radioButtonsArry[i].setDisable(true);
+            }
         }
-        if (Firebase.gpt2 == 0) {
-            radioButton2.setDisable(true);
-        }
-        if (Firebase.gpt3 == 0) {
-            radioButton3.setDisable(true);
-        }
-        if (Firebase.gpt4 == 0) {
-            radioButton4.setDisable(true);
-        }
+    }
 
-
+    public void setShopGPTModels(Button[] buttonArry){
+        for(int i = 1; i < gptArry.length; i++){
+            if(gptArry[i] == 0){
+                buttonArry[i].setDisable(false);
+            }
+            else{
+                buttonArry[i].setDisable(true);
+            }
+        }
     }
 
     public int getCredit() {
         return messageCount;
-    };
+    }
 
 
     public boolean readFirebase() {
@@ -100,24 +89,13 @@ public class Firebase {
                 for (QueryDocumentSnapshot document : documents) {
                     registeredEmailArryList.add((String) document.getData().get("email"));
                     System.out.println(document.getId() + " => " + document.getData().get("name"));
-                    person = new Person(
-                            String.valueOf(document.getData().get("name")),
-                            String.valueOf(document.getData().get("lastName")),
-                            String.valueOf(document.getData().get("email")),
-                            String.valueOf(document.getData().get("Password")),
-                            Integer.parseInt(document.getData().get("age").toString()),
-                            Integer.parseInt(document.getData().get("messageCount").toString()),
-                            Integer.parseInt(document.getData().get("gpt1").toString()),
-                            Integer.parseInt(document.getData().get("gpt2").toString()),
-                            Integer.parseInt(document.getData().get("gpt2").toString()),
-                            Integer.parseInt(document.getData().get("gpt4").toString())
-                    );
                     setNewCredit(Integer.parseInt(document.getData().get("messageCount").toString()));
-                    setGpt1(Integer.parseInt(document.getData().get("gpt1").toString()));
-                    setGpt2(Integer.parseInt(document.getData().get("gpt2").toString()));
-                    setGpt3(Integer.parseInt(document.getData().get("gpt3").toString()));
-                    setGpt4(Integer.parseInt(document.getData().get("gpt4").toString()));
-                    System.out.println(Integer.parseInt(document.getData().get("gpt1").toString()));
+
+                    for (int i = 1; i < gptArry.length + 1; i++) {
+                        String key = "gpt" + i;
+                        setGpt(Integer.parseInt(document.getData().get(key).toString()), i);
+                    }
+
                     listOfUsers.add(person);
                 }
             } else {
@@ -136,10 +114,12 @@ public class Firebase {
                 .document(ID);
         Map<String, Object> updates = new HashMap<>();
         updates.put("messageCount", messageCount);
-        updates.put("gpt1", gpt1);
-        updates.put("gpt2", gpt2);
-        updates.put("gpt3", gpt3);
-        updates.put("gpt4", gpt4);
+
+        for(int i = 1; i < gptArry.length; i++){
+            String key = "gpt" + (i+1);
+            System.out.println(key);
+            updates.put(key, gptArry[i]);
+        }
 
         ApiFuture<WriteResult> writeResult = docRef.update(updates);
         try {
@@ -170,4 +150,6 @@ public class Firebase {
         }
         return false;
     }
+
+
 }

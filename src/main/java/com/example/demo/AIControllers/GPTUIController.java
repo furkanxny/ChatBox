@@ -18,6 +18,7 @@ import javafx.util.Duration;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Properties;
 import java.util.ResourceBundle;
 
@@ -29,26 +30,24 @@ public class GPTUIController implements Initializable {
     @FXML
     private TextArea outputTF;
     @FXML
-    private RadioButton statelessRadioButton;
-    @FXML
-    private RadioButton angryRadioButton;
-    @FXML
-    private RadioButton stupidRadioButton;
-    @FXML
-    private RadioButton friendlyRadioButton;
-
+    private RadioButton r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12;
     @FXML
     private Button enterButton;
     GPTMethods gptMethods = new GPTMethods();
     private String initialPrompt;
     Firebase firebase = new Firebase();
+    RadioButton[] radioButtonsArry;
+
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        radioButtonsArry = new RadioButton[]{r1,r2,r3,r4,r5,r6,r7,r8,r9,r10,r11,r12};
         firebase.setCredit(count);
-        firebase.setChatGPTModels(statelessRadioButton, angryRadioButton, stupidRadioButton, friendlyRadioButton);
+        firebase.setChatGPTModels(radioButtonsArry);
     }
+
+
 
     private void setInitialPrompt() throws IOException {
         Properties properties = new Properties();
@@ -60,20 +59,16 @@ public class GPTUIController implements Initializable {
             }
             properties.load(input);
         }
-        if (friendlyRadioButton.isSelected()) {
+        if (r4.isSelected()) {
             initialPrompt = properties.getProperty("openai.assistants.prompt.friendly");
-        } else if (angryRadioButton.isSelected()) {
+        } else if (r2.isSelected()) {
             initialPrompt = properties.getProperty("openai.assistants.prompt.annoyed");
-        } else if (stupidRadioButton.isSelected()) {
+        } else if (r3.isSelected()) {
             initialPrompt = properties.getProperty("openai.assistants.prompt.stupid");
-        } else if (statelessRadioButton.isSelected()){
+        } else if (r1.isSelected()){
             initialPrompt = properties.getProperty("openai.assistants.prompt.stateless");
             gptMethods.initializeAssistant2(outputTF, inputTF, initialPrompt);
-            System.out.println();
-
         }
-//        gptMethods.initializeAssistant(outputTF, inputTF, initialPrompt);
-//        System.out.println(initialPrompt);
     }
 
     @FXML

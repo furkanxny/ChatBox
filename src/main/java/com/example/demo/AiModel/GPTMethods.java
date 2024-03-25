@@ -141,6 +141,7 @@ public class GPTMethods {
 
     public void initializeAssistant2(TextArea outputTF, TextField inputTF, String initialPrompt) {
 //        stringBuilder.append("User: ");
+
         stringBuilder.append(inputTF.getText());
 //        stringBuilder.append("\n");
         Properties properties = new Properties();
@@ -156,7 +157,7 @@ public class GPTMethods {
             AssistantAIClient client = new AssistantAIClient(properties);
             AssistantResponseDTO assistant = client.createAssistant(initialPrompt);
             ThreadResponseDTO thread = client.createThread();
-            String request = String.valueOf(stringBuilder);
+            String request = String.valueOf(inputTF.getText());
             System.out.println(request);
             client.sendMessage(thread.id(), "user", request);
             RunResponseDTO run = client.runMessage(thread.id(), assistant.id());
@@ -165,7 +166,7 @@ public class GPTMethods {
 
             MessagesListResponseDTO allResponses = client.getMessages(thread.id());
             log2(allResponses, outputTF, inputTF);
-            System.out.println(inputTF.toString());
+            System.out.println(inputTF.getText());
         } catch (Exception ex) {
             ex.printStackTrace();
         }
