@@ -8,10 +8,13 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
 import java.net.URL;
+import java.nio.file.Path;
 import java.util.*;
 import java.util.concurrent.ExecutionException;
 
@@ -34,9 +37,10 @@ public class Firebase {
         this.gptArry[i - 1] = gpt;
     }
 
-    public void buyGPT(int arrayCount){
+    public void buyGPT(int arrayCount) {
         this.gptArry[arrayCount] = 1;
     }
+
     public void setID(String ID) {
         this.ID = ID;
     }
@@ -46,7 +50,7 @@ public class Firebase {
     }
 
     public void setMessageLimit(Text count) {
-        count.setText(String.valueOf(messageCount--));
+        count.setText(String.valueOf(--messageCount));
     }
 
     public void setCredit(Text count) {
@@ -54,19 +58,19 @@ public class Firebase {
     }
 
     public void setChatGPTModels(RadioButton[] radioButtonsArry) {
-        for (int i = 0; i < gptArry.length; i++) {
+        //readFirebase();
+        for (int i = 1; i < gptArry.length; i++) {
             if (gptArry[i] == 0) {
                 radioButtonsArry[i].setDisable(true);
             }
         }
     }
 
-    public void setShopGPTModels(Button[] buttonArry){
-        for(int i = 1; i < gptArry.length; i++){
-            if(gptArry[i] == 0){
+    public void setShopGPTModels(Button[] buttonArry) {
+        for (int i = 1; i < gptArry.length; i++) {
+            if (gptArry[i] == 0) {
                 buttonArry[i].setDisable(false);
-            }
-            else{
+            } else {
                 buttonArry[i].setDisable(true);
             }
         }
@@ -89,12 +93,7 @@ public class Firebase {
                 for (QueryDocumentSnapshot document : documents) {
                     registeredEmailArryList.add((String) document.getData().get("email"));
                     System.out.println(document.getId() + " => " + document.getData().get("name"));
-                    setNewCredit(Integer.parseInt(document.getData().get("messageCount").toString()));
 
-                    for (int i = 1; i < gptArry.length + 1; i++) {
-                        String key = "gpt" + i;
-                        setGpt(Integer.parseInt(document.getData().get(key).toString()), i);
-                    }
 
                     listOfUsers.add(person);
                 }
@@ -109,15 +108,15 @@ public class Firebase {
 
     }
 
+
     public boolean updateDatabase() {
         DocumentReference docRef = Application.fstore.collection("Persons")
                 .document(ID);
         Map<String, Object> updates = new HashMap<>();
         updates.put("messageCount", messageCount);
 
-        for(int i = 1; i < gptArry.length; i++){
-            String key = "gpt" + (i+1);
-            System.out.println(key);
+        for (int i = 1; i < gptArry.length; i++) {
+            String key = "gpt" + (i + 1);
             updates.put(key, gptArry[i]);
         }
 
@@ -139,6 +138,12 @@ public class Firebase {
             if (!documents.isEmpty()) {
                 for (QueryDocumentSnapshot document : documents) {
                     String storedPassword = document.getString("password"); // Make sure the field name matches exactly what's in Firestore
+                    setNewCredit(Integer.parseInt(document.getData().get("messageCount").toString()));
+
+                    for (int i = 1; i < gptArry.length + 1; i++) {
+                        String key = "gpt" + i;
+                        setGpt(Integer.parseInt(document.getData().get(key).toString()), i);
+                    }
                     if (storedPassword != null && storedPassword.equals(password)) {
                         setID(document.getId());
                         return true;
@@ -149,6 +154,29 @@ public class Firebase {
             e.printStackTrace();
         }
         return false;
+    }
+
+    public void addData(TextField emailTF, PasswordField passwordTF) {
+        DocumentReference docRef = Application.fstore.collection("Persons").document(UUID.randomUUID().toString());
+
+        Map<String, Object> data = new HashMap<>();
+        data.put("messageCount", 10);
+        data.put("Name", "Test");
+        data.put("Age", 18);
+        data.put("email", emailTF.getText());
+        data.put("password", passwordTF.getText());
+        data.put("gpt1", 1);
+
+        for (int i = 1; i < gptArry.length; i++) {
+            String key = "gpt" + (i + 1);
+            data.put(key, 0);
+            setID(docRef.getId());
+            setNewCredit(10);
+
+        }
+
+        ApiFuture<WriteResult> result = docRef.set(data);
+        System.out.println("User registration is successful");
     }
 
 

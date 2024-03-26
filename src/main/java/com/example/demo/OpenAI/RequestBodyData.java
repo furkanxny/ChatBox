@@ -3,7 +3,8 @@ package com.example.demo.OpenAI;
 
 import java.util.List;
 
-public class RequestBodyData {  List<Message> messages;
+public class RequestBodyData {
+    List<Message> messages;
     String model;
 
     public RequestBodyData(List<Message> messages, String model) {

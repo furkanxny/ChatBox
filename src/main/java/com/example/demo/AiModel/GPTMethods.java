@@ -171,6 +171,7 @@ public class GPTMethods {
             ex.printStackTrace();
         }
     }
+
     public static String organizeStringByWordCount(String input, int wordCount) {
         String[] words = input.split(" ");
         StringBuilder result = new StringBuilder();

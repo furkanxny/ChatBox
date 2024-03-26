@@ -30,17 +30,8 @@ public class LogInController {
     void goToChatOnAction(ActionEvent event) throws IOException {
         String emailV = emailTF.getText();
         String passV = passwordTF.getText();
-        firebase.readFirebase();
         if (firebase.loginUser(emailV, passV)) {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("GPT-UI.fxml"));
-            Parent secondViewRoot = loader.load();
-
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(secondViewRoot);
-            stage.setScene(scene);
-            stage.setResizable(false);
-            stage.centerOnScreen();
-
+            changeScenes(event, "GPT-UI.fxml");
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("ERROR");
@@ -48,5 +39,24 @@ public class LogInController {
             alert.setContentText("You have entered wrong email or passport");
             alert.showAndWait();
         }
+    }
+
+
+    @FXML
+    void buttonOnAction(ActionEvent event) throws IOException {
+        firebase.addData(emailTF, passwordTF);
+        changeScenes(event, "GPT-UI.fxml");
+    }
+
+
+    public void changeScenes(ActionEvent event, String path) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
+        Parent secondViewRoot = loader.load();
+
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(secondViewRoot);
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.centerOnScreen();
     }
 }

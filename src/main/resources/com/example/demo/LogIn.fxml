@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="380.0" prefWidth="379.0" style="-fx-background-color: #116666;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.LogInController">
+<BorderPane prefHeight="380.0" prefWidth="379.0" style="-fx-background-color: #E74C3C;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.LogInController">
    <center>
       <Pane prefHeight="380.0" prefWidth="380.0" style="-fx-background-radius: 0;" BorderPane.alignment="CENTER">
          <children>
@@ -49,6 +49,7 @@
                   <Image url="@../../../Other%20Pngs/3.png" />
                </image>
             </ImageView>
+            <Button layoutX="319.0" layoutY="315.0" mnemonicParsing="false" onAction="#buttonOnAction" text="Register" />
          </children>
       </Pane>
    </center>

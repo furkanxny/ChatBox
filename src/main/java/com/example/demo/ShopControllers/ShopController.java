@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -32,25 +33,22 @@ public class ShopController implements Initializable {
     Firebase firebase = new Firebase();
 
 
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-    firebase.setCredit(avaliableCredits);
-    tempCount = firebase.getCredit();
+        firebase.setCredit(avaliableCredits);
+        tempCount = firebase.getCredit();
     }
 
 
-    public void setNewCredits(){
-        if(!amountsWanted.getText().isEmpty() && Integer.parseInt(amountsWanted.getText()) > 0 && Integer.parseInt(amountsWanted.getText()) < 20){
-       firebase.setNewCredit(tempCount + Integer.parseInt(amountsWanted.getText()));
-       firebase.updateDatabase();
-       firebase.setCredit(avaliableCredits);
-       tempCount = firebase.getCredit();
-       amountsWanted.clear();
-       termsButton.setSelected(false);
-        }
-
-        else {
+    public void setNewCredits() {
+        if (!amountsWanted.getText().isEmpty() && Integer.parseInt(amountsWanted.getText()) > 0 && Integer.parseInt(amountsWanted.getText()) < 20) {
+            firebase.setNewCredit(tempCount + Integer.parseInt(amountsWanted.getText()));
+            firebase.updateDatabase();
+            firebase.setCredit(avaliableCredits);
+            tempCount = firebase.getCredit();
+            amountsWanted.clear();
+            termsButton.setSelected(false);
+        } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("ERROR");
             alert.setHeaderText("WRONG INPUT");
@@ -62,10 +60,9 @@ public class ShopController implements Initializable {
 
     @FXML
     void buyButtonOnAction(ActionEvent event) {
-        if(termsButton.isSelected()){
+        if (termsButton.isSelected()) {
             setNewCredits();
-        }
-        else {
+        } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("ERROR");
             alert.setHeaderText("YOU HAVE NOT ACCEPTED THE TERM AND AGREEMENTS!");
@@ -76,19 +73,17 @@ public class ShopController implements Initializable {
 
     @FXML
     void goToChatOnAction(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/demo/GPT-UI.fxml"));
-        Parent secondViewRoot = loader.load();
-
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(secondViewRoot);
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.centerOnScreen();
+        changeScenes(event, "/com/example/demo/GPT-UI.fxml");
     }
 
     @FXML
     void goToProfileOnAction(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/demo/ShopProfile.fxml"));
+        changeScenes(event, "/com/example/demo/ShopProfile.fxml");
+    }
+
+
+    public void changeScenes(ActionEvent event, String path) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
         Parent secondViewRoot = loader.load();
 
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -97,6 +92,5 @@ public class ShopController implements Initializable {
         stage.setResizable(false);
         stage.centerOnScreen();
     }
-
 
 }

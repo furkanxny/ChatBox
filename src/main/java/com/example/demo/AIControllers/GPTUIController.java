@@ -39,14 +39,12 @@ public class GPTUIController implements Initializable {
     RadioButton[] radioButtonsArry;
 
 
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        radioButtonsArry = new RadioButton[]{r1,r2,r3,r4,r5,r6,r7,r8,r9,r10,r11,r12};
+        radioButtonsArry = new RadioButton[]{r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12};
         firebase.setCredit(count);
         firebase.setChatGPTModels(radioButtonsArry);
     }
-
 
 
     private void setInitialPrompt() throws IOException {
@@ -65,38 +63,16 @@ public class GPTUIController implements Initializable {
             initialPrompt = properties.getProperty("openai.assistants.prompt.annoyed");
         } else if (r3.isSelected()) {
             initialPrompt = properties.getProperty("openai.assistants.prompt.stupid");
-        } else if (r1.isSelected()){
+        } else if (r1.isSelected()) {
             initialPrompt = properties.getProperty("openai.assistants.prompt.stateless");
             gptMethods.initializeAssistant2(outputTF, inputTF, initialPrompt);
         }
     }
 
-    @FXML
-    void goToCreditsOnAction(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/demo/Shop.fxml"));
-        Parent secondViewRoot = loader.load();
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(secondViewRoot);
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.centerOnScreen();
-    }
-
-    @FXML
-    void goToProfileOnAction(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/demo/ShopProfile.fxml"));
-        Parent secondViewRoot = loader.load();
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(secondViewRoot);
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.centerOnScreen();
-    }
-
 
     @FXML
     void enterButtonOnAction(ActionEvent event) throws IOException {
-        if (firebase.getCredit() <= -1) {
+        if (firebase.getCredit() <= 0) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("OVER LIMIT");
             alert.setHeaderText("YOU HAVE USED ALL YOUR CREDIT!");
@@ -111,6 +87,27 @@ public class GPTUIController implements Initializable {
         pause.setOnFinished(event1 -> enterButton.setDisable(false));
         pause.play();
         firebase.updateDatabase();
+    }
+
+    @FXML
+    void goToCreditsOnAction(ActionEvent event) throws IOException {
+        changeScenes(event, "/com/example/demo/Shop.fxml");
+    }
+
+    @FXML
+    void goToProfileOnAction(ActionEvent event) throws IOException {
+        changeScenes(event, "/com/example/demo/ShopProfile.fxml");
+    }
+
+    public void changeScenes(ActionEvent event, String path) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
+        Parent secondViewRoot = loader.load();
+
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(secondViewRoot);
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.centerOnScreen();
     }
 
 

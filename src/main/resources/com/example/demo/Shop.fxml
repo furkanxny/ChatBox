@@ -11,7 +11,7 @@
 
 <BorderPane xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.ShopControllers.ShopController">
    <center>
-      <Pane prefHeight="500.0" prefWidth="660.0" style="-fx-background-color: A1F2F5;" BorderPane.alignment="CENTER">
+      <Pane prefHeight="500.0" prefWidth="660.0" style="-fx-background-color: #95A5A6;" BorderPane.alignment="CENTER">
          <children>
             <Text layoutX="163.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BUY CREDITS">
                <font>
