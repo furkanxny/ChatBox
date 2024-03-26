@@ -43,9 +43,8 @@ public class LogInController {
 
 
     @FXML
-    void buttonOnAction(ActionEvent event) throws IOException {
-        firebase.addData(emailTF, passwordTF);
-        changeScenes(event, "GPT-UI.fxml");
+    void registerButtonOnAction(ActionEvent event) throws IOException {
+        changeScenes(event,"registerUI.fxml");
     }
 
 
