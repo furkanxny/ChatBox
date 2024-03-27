@@ -1,17 +1,22 @@
 package com.example.demo;
 
+import com.example.demo.FirebaseControllers.Firebase;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class registerUIController {
+public class registerUIController implements Initializable {
 
     @FXML
     private TextField ageTF;
@@ -23,16 +28,23 @@ public class registerUIController {
     private TextField nameTF;
 
     @FXML
-    private TextField passwordTF;
+    private PasswordField passwordTF;
+
+    Firebase firebase;
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        firebase = new Firebase();
+    }
 
     @FXML
     void registerOnAction(ActionEvent event) throws IOException {
-    changeScenes(event, "GPT-UI.fxml");
+        firebase.addData(emailTF, nameTF, ageTF, passwordTF);
+        changeScenes(event, "GPT-UI.fxml");
     }
 
     @FXML
     void signInOnAction(ActionEvent event) throws IOException {
-    changeScenes(event, "LogIn.fxml");
+        changeScenes(event, "LogIn.fxml");
     }
 
     public void changeScenes(ActionEvent event, String path) throws IOException {
@@ -45,4 +57,6 @@ public class registerUIController {
         stage.setResizable(false);
         stage.centerOnScreen();
     }
+
+
 }

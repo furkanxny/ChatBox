@@ -65,8 +65,24 @@ public class GPTUIController implements Initializable {
             initialPrompt = properties.getProperty("openai.assistants.prompt.stupid");
         } else if (r1.isSelected()) {
             initialPrompt = properties.getProperty("openai.assistants.prompt.stateless");
-            gptMethods.initializeAssistant2(outputTF, inputTF, initialPrompt);
+        } else if (r5.isSelected()) {
+            initialPrompt = properties.getProperty("openai.assistants.prompt.drunk");
+        } else if (r6.isSelected()) {
+            initialPrompt = properties.getProperty("openai.assistants.prompt.yoda");
+        } else if (r7.isSelected()) {
+            initialPrompt = properties.getProperty("openai.assistants.prompt.doctor");
+        } else if (r8.isSelected()) {
+            initialPrompt = properties.getProperty("openai.assistants.prompt.girlfriend");
+        } else if (r9.isSelected()) {
+            initialPrompt = properties.getProperty("openai.assistants.prompt.rapper");
+        } else if (r10.isSelected()) {
+            initialPrompt = properties.getProperty("openai.assistants.prompt.programmer");
+        } else if (r11.isSelected()) {
+            initialPrompt = properties.getProperty("openai.assistants.prompt.story");
+        } else if (r12.isSelected()) {
+            initialPrompt = properties.getProperty("openai.assistants.prompt.chef");
         }
+        gptMethods.initializeAssistant2(outputTF, inputTF, initialPrompt);
     }
 
 

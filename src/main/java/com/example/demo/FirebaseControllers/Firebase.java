@@ -156,13 +156,13 @@ public class Firebase {
         return false;
     }
 
-    public void addData(TextField emailTF, PasswordField passwordTF) {
-        DocumentReference docRef = Application.fstore.collection("Persons").document(UUID.randomUUID().toString());
+    public void addData(TextField emailTF, TextField name, TextField age, PasswordField passwordTF) {
 
+        DocumentReference docRef = Application.fstore.collection("Persons").document(UUID.randomUUID().toString());
         Map<String, Object> data = new HashMap<>();
         data.put("messageCount", 10);
-        data.put("Name", "Test");
-        data.put("Age", 18);
+        data.put("Name", name.getText());
+        data.put("Age", age.getText());
         data.put("email", emailTF.getText());
         data.put("password", passwordTF.getText());
         data.put("gpt1", 1);
