@@ -24,9 +24,9 @@
                <font>
                   <Font name="Impact" size="21.0" />
                </font></PasswordField>
-            <Button layoutX="192.0" layoutY="322.0" maxHeight="5.0" maxWidth="5.0" minHeight="5.0" minWidth="5.0" mnemonicParsing="false" onAction="#goToChatOnAction" prefHeight="5.0" prefWidth="5.0" text="Go To AI">
+            <Button layoutX="192.0" layoutY="311.0" maxHeight="5.0" maxWidth="5.0" minHeight="5.0" minWidth="5.0" mnemonicParsing="false" onAction="#goToChatOnAction" prefHeight="5.0" prefWidth="5.0" text="Go To AI">
                <graphic>
-                  <ImageView fitHeight="142.0" fitWidth="285.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="123.0" fitWidth="234.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../Other%20Pngs/7.png" />
                      </image>
@@ -35,7 +35,7 @@
                <padding>
                   <Insets bottom="-50.0" right="280.0" />
                </padding></Button>
-            <Label alignment="CENTER" layoutX="37.0" layoutY="27.0" prefHeight="99.0" prefWidth="309.0" text="Sign In">
+            <Label alignment="CENTER" layoutX="37.0" layoutY="27.0" prefHeight="99.0" prefWidth="309.0" text="LOGIN">
                <font>
                   <Font name="Phosphate Inline" size="81.0" />
                </font>
@@ -50,10 +50,13 @@
                   <Image url="@../../../Other%20Pngs/3.png" />
                </image>
             </ImageView>
-            <Button layoutX="307.0" layoutY="279.0" mnemonicParsing="false" onAction="#registerButtonOnAction" style="-fx-background-radius: 30; -fx-background-color: #AAB7B8;" text="Register" />
-            <Text layoutX="295.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You don't have an account?">
+            <Button layoutX="283.0" layoutY="281.0" mnemonicParsing="false" onAction="#registerButtonOnAction" prefHeight="30.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #AAB7B8;" text="Register">
                <font>
-                  <Font size="7.0" />
+                  <Font name="Impact" size="13.0" />
+               </font></Button>
+            <Text layoutX="262.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You don't have an account?">
+               <font>
+                  <Font name="System Bold" size="10.0" />
                </font>
             </Text>
          </children>

@@ -16,17 +16,17 @@
          <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
          </font></TextArea>
-      <TextField fx:id="inputTF" alignment="CENTER" layoutX="288.0" layoutY="671.0" prefHeight="52.0" prefWidth="679.0" promptText="prompt" style="-fx-background-radius: 30; -fx-border-color: #87CEEB; -fx-border-radius: 50; -fx-background-color: transparent; -fx-background-color: ABABAB;">
+      <TextField fx:id="inputTF" alignment="CENTER" layoutX="160.0" layoutY="677.0" prefHeight="50.0" prefWidth="827.0" promptText="prompt" style="-fx-background-radius: 30; -fx-border-color: #87CEEB; -fx-border-radius: 50; -fx-background-color: transparent; -fx-background-color: ABABAB;">
          <font>
             <Font name="Arial Rounded MT Bold" size="25.0" />
          </font></TextField>
-      <Button fx:id="enterButton" layoutX="1022.0" layoutY="671.0" mnemonicParsing="false" onAction="#enterButtonOnAction" opacity="0.72" prefHeight="44.0" prefWidth="129.0" style="-fx-background-radius: 50; -fx-background-color: #AAAAAA;" text="Enter">
+      <Button fx:id="enterButton" layoutX="1096.0" layoutY="675.0" mnemonicParsing="false" onAction="#enterButtonOnAction" opacity="0.72" prefHeight="60.0" prefWidth="162.0" style="-fx-background-radius: 50; -fx-background-color: #AAAAAA;" text="Enter">
          <font>
             <Font name="Phosphate Inline" size="22.0" />
          </font></Button>
-      <Label layoutX="578.0" layoutY="21.0" style="-fx-background-color: #AABBBB; -fx-border-radius: 30; -fx-background-radius: 30;" text="GPT AIFX">
+      <Label layoutX="530.0" layoutY="8.0" style="-fx-background-color: #AABBBB; -fx-border-radius: 30; -fx-background-radius: 30;" text="GPT AIFX">
          <font>
-            <Font name="Phosphate Inline" size="51.0" />
+            <Font name="Phosphate Inline" size="66.0" />
          </font>
       </Label>
       <RadioButton fx:id="r4" layoutX="1221.0" layoutY="9.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="110.0" selected="true" style="-fx-background-color: #16a085; -fx-background-radius: 20;" text="   Friendly">
@@ -52,21 +52,21 @@
             <Font name="Chalkboard" size="13.0" />
          </font>
       </RadioButton>
-      <Text fx:id="count" fill="#09c0c9" layoutX="161.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Count">
+      <Text fx:id="count" fill="#09c0c9" layoutX="86.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Count">
          <font>
             <Font name="Impact" size="21.0" />
          </font>
       </Text>
-      <Button layoutX="335.0" layoutY="12.0" mnemonicParsing="false" onAction="#goToCreditsOnAction" opacity="0.7" prefHeight="30.0" prefWidth="120.0" style="-fx-background-radius: 50; -fx-background-color: #61FF12;" text="BUY CREDITS">
+      <Button layoutX="369.0" layoutY="40.0" mnemonicParsing="false" onAction="#goToCreditsOnAction" opacity="0.7" prefHeight="30.0" prefWidth="120.0" style="-fx-background-radius: 50; -fx-background-color: #61FF12;" text="BUY CREDITS">
          <font>
             <Font name="Phosphate Inline" size="14.0" />
          </font></Button>
-      <Label alignment="CENTER" layoutX="135.0" layoutY="11.0" prefHeight="27.0" prefWidth="70.0" text="Credits" textFill="#00b3e4">
+      <Label alignment="CENTER" layoutX="60.0" layoutY="13.0" prefHeight="27.0" prefWidth="70.0" text="Credits" textFill="#00b3e4">
          <font>
             <Font name="Impact" size="21.0" />
          </font>
       </Label>
-      <Button layoutX="335.0" layoutY="50.0" mnemonicParsing="false" onAction="#goToProfileOnAction" opacity="0.7" prefHeight="30.0" prefWidth="120.0" style="-fx-background-radius: 50; -fx-background-color: #61FF12;" text="BUY PROFILE">
+      <Button layoutX="228.0" layoutY="40.0" mnemonicParsing="false" onAction="#goToProfileOnAction" opacity="0.7" prefHeight="30.0" prefWidth="120.0" style="-fx-background-radius: 50; -fx-background-color: #61FF12;" text="BUY PROFILE">
          <font>
             <Font name="Phosphate Inline" size="14.0" />
          </font></Button>

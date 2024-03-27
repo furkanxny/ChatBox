@@ -80,6 +80,20 @@ public class Firebase {
         return messageCount;
     }
 
+        public boolean isEmailExist(TextField email){
+
+            boolean isExist = true;
+
+            for(String s : registeredEmailArryList) {
+                if(Objects.equals(s, email.getText())){
+                    isExist = false;
+                    return false;
+                }
+            else isExist = true;}
+
+            return true;
+        }
+
 
     public boolean readFirebase() {
         key = false;

@@ -8,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -38,8 +39,19 @@ public class registerUIController implements Initializable {
 
     @FXML
     void registerOnAction(ActionEvent event) throws IOException {
-        firebase.addData(emailTF, nameTF, ageTF, passwordTF);
-        changeScenes(event, "GPT-UI.fxml");
+        firebase.readFirebase();
+        if(firebase.isEmailExist(emailTF)){
+            firebase.addData(emailTF, nameTF, ageTF, passwordTF);
+            changeScenes(event, "GPT-UI.fxml");
+        }
+        else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("ERROR");
+            alert.setHeaderText("EMAIL ALREADY EXIST");
+            alert.setContentText("This email already exists, please login or use another email!");
+            alert.showAndWait();
+        }
+
     }
 
     @FXML
