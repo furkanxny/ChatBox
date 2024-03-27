@@ -2,7 +2,7 @@
 # ChatGPT Desktop Application
 
 ## Introduction
-This project is a ChatGPT desktop application developed using JavaFX and Maven. It utilizes the OpenAI API to integrate ChatGPT's conversational AI capabilities, providing a user-friendly interface for interacting with ChatGPT directly from your desktop.
+This project is a ChatGPT desktop application developed using JavaFX and Maven. It utilizes the OpenAI API to integrate ChatGPT's conversational AI capabilities, providing a user-friendly interface for interacting with different profiles of ChatGPT directly from your desktop.
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
@@ -68,12 +68,12 @@ For more detailed inquiries, you can contact the project maintainers directly.
 
 Application Pictures
 
+<img width="448" alt="Screen Shot 2024-03-27 at 1 25 55 PM" src="https://github.com/furkanxny/AIFX/assets/116584632/86fc8d22-7205-4642-aa63-96f47fb69ec1">
 
-SIGN IN PAGE
-<img width="538" alt="Screen Shot 2024-03-23 at 9 35 14 PM" src="https://github.com/furkanxny/AIFX/assets/116584632/440de81a-85ec-4c78-8f6b-99e131b92f8e">
+<img width="840" alt="Screen Shot 2024-03-27 at 1 26 18 PM" src="https://github.com/furkanxny/AIFX/assets/116584632/8d058752-e7a7-439c-ac55-39648bb71f1b">
 
-CHAT PAGE
-<img width="1372" alt="Screen Shot 2024-03-23 at 9 37 20 PM" src="https://github.com/furkanxny/AIFX/assets/116584632/4283af12-eda1-4bce-8920-3852b99e6ae6">
 
-CREDIT SHOP PAGE
 <img width="841" alt="Screen Shot 2024-03-23 at 9 37 58 PM" src="https://github.com/furkanxny/AIFX/assets/116584632/aadca369-a9ab-48a1-b132-c37480cb1fd9">
+
+<img width="1397" alt="Screen Shot 2024-03-27 at 1 25 09 PM" src="https://github.com/furkanxny/AIFX/assets/116584632/f85b8756-d515-42d8-9e17-8a3422030f8b">
+
