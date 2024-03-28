@@ -47,7 +47,7 @@
             <Font name="Chalkboard" size="13.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="r1" layoutX="816.0" layoutY="9.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="110.0" selected="true" style="-fx-background-color: #CCAAAA; -fx-background-radius: 20;" text=" Stateless" toggleGroup="$promptToggleGroup">
+      <RadioButton fx:id="r1" layoutX="816.0" layoutY="9.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="110.0" selected="true" style="-fx-background-color: #CCAAAA; -fx-background-radius: 20;" text="  Stateless" toggleGroup="$promptToggleGroup">
          <font>
             <Font name="Chalkboard" size="13.0" />
          </font>
@@ -75,17 +75,17 @@
             <Font name="Chalkboard" size="13.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="r6" layoutX="951.0" layoutY="41.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="110.0" style="-fx-background-color: #E74C3C; -fx-background-radius: 20;" text="  Yoda" toggleGroup="$promptToggleGroup">
+      <RadioButton fx:id="r6" layoutX="951.0" layoutY="41.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="110.0" style="-fx-background-color: #E74C3C; -fx-background-radius: 20;" text="    Yoda" toggleGroup="$promptToggleGroup">
          <font>
             <Font name="Chalkboard" size="13.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="r7" layoutX="1086.0" layoutY="41.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="110.0" style="-fx-background-color: #A569BD; -fx-background-radius: 20;" text="Doctor" toggleGroup="$promptToggleGroup">
+      <RadioButton fx:id="r7" layoutX="1086.0" layoutY="41.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="110.0" style="-fx-background-color: #A569BD; -fx-background-radius: 20;" text="   Doctor" toggleGroup="$promptToggleGroup">
          <font>
             <Font name="Chalkboard" size="13.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="r5" alignment="BOTTOM_LEFT" layoutX="815.0" layoutY="39.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="110.0" style="-fx-background-color: #61FF12; -fx-background-radius: 20;" text="Drunk" toggleGroup="$promptToggleGroup">
+      <RadioButton fx:id="r5" alignment="BOTTOM_LEFT" layoutX="815.0" layoutY="39.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="110.0" style="-fx-background-color: #61FF12; -fx-background-radius: 20;" text="   Drunk" toggleGroup="$promptToggleGroup">
          <font>
             <Font name="Chalkboard" size="13.0" />
          </font>
@@ -100,12 +100,12 @@
             <Font name="Chalkboard" size="13.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="r11" layoutX="1086.0" layoutY="69.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="110.0" style="-fx-background-color: #566573; -fx-background-radius: 20;" text="Stroyteller" toggleGroup="$promptToggleGroup">
+      <RadioButton fx:id="r11" layoutX="1086.0" layoutY="69.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="110.0" style="-fx-background-color: #566573; -fx-background-radius: 20;" text=" Stroyteller" toggleGroup="$promptToggleGroup">
          <font>
             <Font name="Chalkboard" size="13.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="r9" layoutX="814.0" layoutY="69.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="110.0" style="-fx-background-color: #AAB7B8; -fx-background-radius: 20;" text="Rapper" toggleGroup="$promptToggleGroup">
+      <RadioButton fx:id="r9" layoutX="814.0" layoutY="69.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="110.0" style="-fx-background-color: #AAB7B8; -fx-background-radius: 20;" text="   Rapper" toggleGroup="$promptToggleGroup">
          <font>
             <Font name="Chalkboard" size="13.0" />
          </font>

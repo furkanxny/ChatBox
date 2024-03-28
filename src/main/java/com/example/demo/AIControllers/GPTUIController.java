@@ -82,7 +82,7 @@ public class GPTUIController implements Initializable {
         } else if (r12.isSelected()) {
             initialPrompt = properties.getProperty("openai.assistants.prompt.chef");
         }
-        gptMethods.initializeAssistant2(outputTF, inputTF, initialPrompt);
+        gptMethods.initializeAssistant(outputTF, inputTF, initialPrompt);
     }
 
 
