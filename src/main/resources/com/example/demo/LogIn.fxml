@@ -24,7 +24,7 @@
                <font>
                   <Font name="Impact" size="21.0" />
                </font></PasswordField>
-            <Button layoutX="192.0" layoutY="311.0" maxHeight="5.0" maxWidth="5.0" minHeight="5.0" minWidth="5.0" mnemonicParsing="false" onAction="#goToChatOnAction" prefHeight="5.0" prefWidth="5.0" text="Go To AI">
+            <Button layoutX="205.0" layoutY="309.0" maxHeight="5.0" maxWidth="5.0" minHeight="5.0" minWidth="5.0" mnemonicParsing="false" onAction="#goToChatOnAction" prefHeight="5.0" prefWidth="5.0" text="Go To AI">
                <graphic>
                   <ImageView fitHeight="123.0" fitWidth="234.0" pickOnBounds="true" preserveRatio="true">
                      <image>

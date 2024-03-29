@@ -41,8 +41,9 @@ public class AssistantAIClient {
         return response.body();
     }
 
+
     public AssistantResponseDTO createAssistant(String initialPrompt) throws Exception {
-        AssistantRequestDTO dto = new AssistantRequestDTO(GPT4_1106_PREVIEW.getName(), initialPrompt);
+        AssistantRequestDTO dto = new AssistantRequestDTO(GPT4_1106_PREVIEW.getName(), initialPrompt); // <- GPT MODEL NAME.
         String response = post(assistantsUrl, dto);
         return objectMapper.readValue(response, AssistantResponseDTO.class);
     }
