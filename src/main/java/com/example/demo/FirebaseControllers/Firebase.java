@@ -6,15 +6,11 @@ import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
-
-import java.net.URL;
-import java.nio.file.Path;
 import java.util.*;
 import java.util.concurrent.ExecutionException;
 
@@ -146,20 +142,23 @@ public class Firebase {
 
 
     public boolean loginUser(String email, String password) {
+
         ApiFuture<QuerySnapshot> future = firestore.collection("Persons").whereEqualTo("email", email).get();
+
         try {
+
             List<QueryDocumentSnapshot> documents = future.get().getDocuments();
             if (!documents.isEmpty()) {
                 for (QueryDocumentSnapshot document : documents) {
                     String storedPassword = document.getString("password"); // Make sure the field name matches exactly what's in Firestore
                     setNewCredit(Integer.parseInt(document.getData().get("messageCount").toString()));
-
                     for (int i = 1; i < gptArry.length + 1; i++) {
                         String key = "gpt" + i;
                         setGpt(Integer.parseInt(document.getData().get(key).toString()), i);
                     }
                     if (storedPassword != null && storedPassword.equals(password)) {
                         setID(document.getId());
+
                         return true;
                     }
                 }
