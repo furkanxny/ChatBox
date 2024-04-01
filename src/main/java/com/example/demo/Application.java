@@ -17,9 +17,9 @@ public class Application extends javafx.application.Application {
     public void start(Stage stage) throws IOException {
         fstore = contxtFirebase.firebase();
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("LogIn.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 400, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1000, 700);
         //stage.initStyle(StageStyle.UNDECORATED);
-        stage.setTitle("AIFX");
+        stage.setTitle("CHATBOX");
         stage.setScene(scene);
         stage.setResizable(false);
         stage.centerOnScreen();

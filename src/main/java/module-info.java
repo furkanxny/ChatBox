@@ -16,6 +16,7 @@ module com.example.demo {
     requires com.fasterxml.jackson.annotation;
     requires java.net.http;
     requires com.fasterxml.jackson.databind;
+    requires java.desktop;
 
     opens com.example.demo.dto to com.fasterxml.jackson.databind;
 

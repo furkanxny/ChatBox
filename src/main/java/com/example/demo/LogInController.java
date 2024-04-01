@@ -1,4 +1,6 @@
 package com.example.demo;
+import java.awt.Desktop;
+import java.net.URI;
 
 import com.example.demo.FirebaseControllers.Firebase;
 import javafx.event.ActionEvent;
@@ -10,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -25,6 +28,19 @@ public class LogInController {
     private void initialize() {
         firebase = new Firebase();
     }
+
+    @FXML
+    void chatBoxClicked(MouseEvent event) {
+        try {
+            Desktop desktop = Desktop.getDesktop();
+            URI uri = new URI("https://github.com/furkanxny/ChatBox.git");
+            desktop.browse(uri);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
 
     @FXML
     void goToChatOnAction(ActionEvent event) throws IOException {

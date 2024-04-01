@@ -10,56 +10,106 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<BorderPane prefHeight="380.0" prefWidth="379.0" style="-fx-background-color: #E74C3C;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.LogInController">
-   <center>
-      <Pane prefHeight="380.0" prefWidth="380.0" style="-fx-background-radius: 0;" BorderPane.alignment="CENTER">
-         <children>
-            <TextField fx:id="emailTF" alignment="CENTER" layoutX="82.0" layoutY="147.0" prefHeight="50.0" prefWidth="250.0" promptText="Email" style="-fx-border-color: #0598ff; -fx-background-color: transparent; -fx-border-width: 0px 0px 2px;">
-               <font>
-                  <Font name="Impact" size="21.0" />
-               </font></TextField>
-            <PasswordField fx:id="passwordTF" alignment="CENTER" layoutX="82.0" layoutY="197.0" prefHeight="50.0" prefWidth="250.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px;">
-               <font>
-                  <Font name="Impact" size="21.0" />
-               </font></PasswordField>
-            <Button layoutX="205.0" layoutY="309.0" maxHeight="5.0" maxWidth="5.0" minHeight="5.0" minWidth="5.0" mnemonicParsing="false" onAction="#goToChatOnAction" prefHeight="5.0" prefWidth="5.0" text="Go To AI">
-               <graphic>
-                  <ImageView fitHeight="123.0" fitWidth="234.0" pickOnBounds="true" preserveRatio="true">
+
+<Pane prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: FFF6EB;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.LogInController">
+   <children>
+      <BorderPane layoutX="236.0" layoutY="145.0" prefHeight="449.0" prefWidth="520.0" style="-fx-background-color: #FFFBF7; -fx-background-radius: 20;">
+         <center>
+            <Pane minHeight="10.0" minWidth="10.0" prefHeight="380.0" prefWidth="380.0" style="-fx-background-radius: 20 20 20 20; -fx-border-radius: 20 20 20 20; -fx-border-color: #ff9e15;" BorderPane.alignment="CENTER">
+               <children>
+                  <TextField fx:id="emailTF" layoutX="95.0" layoutY="162.0" prefHeight="50.0" prefWidth="400.0" promptText="Email address" style="-fx-border-color: #0598ff; -fx-background-color: transparent; -fx-border-width: 2px 2px 2px; -fx-border-radius: 10;">
+                     <font>
+                        <Font name="Arial Narrow Bold" size="21.0" />
+                     </font>
+                  </TextField>
+                  <PasswordField fx:id="passwordTF" layoutX="95.0" layoutY="237.0" prefHeight="50.0" prefWidth="400.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 2px 2px 2px; -fx-border-radius: 10;">
+                     <font>
+                        <Font name="Arial Narrow Bold" size="21.0" />
+                     </font>
+                  </PasswordField>
+                  <Button layoutX="255.0" layoutY="373.0" maxHeight="5.0" maxWidth="5.0" minHeight="5.0" minWidth="5.0" mnemonicParsing="false" onAction="#goToChatOnAction" prefHeight="5.0" prefWidth="5.0" text="Go To AI">
+                     <graphic>
+                        <ImageView fitHeight="151.0" fitWidth="417.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../Other%20Pngs/7.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets bottom="-50.0" right="280.0" />
+                     </padding>
+                  </Button>
+                  <Label alignment="CENTER" layoutX="110.0" layoutY="9.0" prefHeight="99.0" prefWidth="309.0" text="Log in">
+                     <font>
+                        <Font name="Georgia Bold" size="48.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="71.0" fitWidth="105.0" layoutX="4.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../Other%20Pngs/7.png" />
+                        <Image url="@../../../Other%20Pngs/1.png" />
                      </image>
                   </ImageView>
-               </graphic>
-               <padding>
-                  <Insets bottom="-50.0" right="280.0" />
-               </padding></Button>
-            <Label alignment="CENTER" layoutX="37.0" layoutY="27.0" prefHeight="99.0" prefWidth="309.0" text="LOGIN">
+                  <ImageView fitHeight="69.0" fitWidth="94.0" layoutX="13.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Other%20Pngs/3.png" />
+                     </image>
+                  </ImageView>
+                  <Button layoutX="326.0" layoutY="119.0" maxHeight="5.0" maxWidth="5.0" minHeight="5.0" minWidth="5.0" mnemonicParsing="false" onAction="#registerButtonOnAction" prefHeight="5.0" prefWidth="5.0" style="-fx-background-radius: 30; -fx-background-color: transparent;" text="Register">
+                     <font>
+                        <Font name="Impact" size="13.0" />
+                     </font>
+                     <graphic>
+                        <Label text=" Sign up " textFill="#ff9e15">
+                           <padding>
+                              <Insets left="10.0" right="20.0" />
+                           </padding>
+                           <font>
+                              <Font name="System Italic" size="23.0" />
+                           </font>
+                        </Label>
+                     </graphic>
+                     <padding>
+                        <Insets left="10.0" right="50.0" />
+                     </padding>
+                  </Button>
+                  <Label layoutX="169.0" layoutY="110.0" text="New to ChatBox?" textFill="#949494">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </center>
+      </BorderPane>
+      <Pane layoutX="-40.0" layoutY="-28.0" prefHeight="126.0" prefWidth="1040.0" style="-fx-background-color: #FFFBF7;">
+         <children>
+            <ImageView fitHeight="164.0" fitWidth="173.0" layoutX="19.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Logos/chatbox.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="174.0" layoutY="19.0" prefHeight="107.0" prefWidth="276.0" text="ChatBox">
                <font>
-                  <Font name="Phosphate Inline" size="81.0" />
+                  <Font name="Marker Felt Thin" size="74.0" />
                </font>
             </Label>
-            <ImageView fitHeight="60.0" fitWidth="78.0" layoutX="14.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Other%20Pngs/1.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="59.0" fitWidth="74.0" layoutX="22.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Other%20Pngs/3.png" />
-               </image>
-            </ImageView>
-            <Button layoutX="283.0" layoutY="281.0" mnemonicParsing="false" onAction="#registerButtonOnAction" prefHeight="30.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #AAB7B8;" text="Register">
+            <Label layoutX="600.0" layoutY="60.0" onMouseClicked="#chatBoxClicked" text="ChatBox" textFill="#949494">
                <font>
-                  <Font name="Impact" size="13.0" />
-               </font></Button>
-            <Text layoutX="262.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You don't have an account?">
-               <font>
-                  <Font name="System Bold" size="10.0" />
+                  <Font size="25.0" />
                </font>
-            </Text>
+            </Label>
+            <Label layoutX="750.0" layoutY="59.0" text="HELP" textFill="#949494">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="880.0" layoutY="58.0" text="FAQ" textFill="#949494">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
-   </center>
-</BorderPane>
+   </children>
+</Pane>
