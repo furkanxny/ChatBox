@@ -3,38 +3,33 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #AED6F1;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.ShopControllers.ProfileController">
+<AnchorPane prefHeight="700.0" prefWidth="1100.0" style="-fx-background-color: #AED6F1;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.ShopControllers.ProfileController">
    <children>
-      <Label layoutX="178.0" layoutY="28.0" text="SHOP PROFILE">
+      <Label layoutX="350.0" layoutY="29.0" text="PROFILE SHOP">
          <font>
-            <Font name="Phosphate Inline" size="40.0" />
+            <Font name="Phosphate Inline" size="65.0" />
          </font>
       </Label>
-      <Button layoutX="503.0" layoutY="15.0" mnemonicParsing="false" onAction="#goToCreditsOnAction" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="SHOP CREDITS">
+      <Button layoutX="201.0" layoutY="27.0" mnemonicParsing="false" onAction="#goToCreditsOnAction" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="SHOP CREDITS">
          <font>
             <Font name="Phosphate Inline" size="13.0" />
          </font></Button>
-      <Button layoutX="499.0" layoutY="53.0" mnemonicParsing="false" onAction="#goToChatOnAction" prefHeight="26.0" prefWidth="105.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="CHATGPT">
+      <Button layoutX="67.0" layoutY="28.0" mnemonicParsing="false" onAction="#goToChatOnAction" prefHeight="26.0" prefWidth="105.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="CHATGPT">
          <font>
             <Font name="Phosphate Inline" size="13.0" />
          </font></Button>
-      <Button fx:id="b1" disable="true" layoutX="42.0" layoutY="140.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="71.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="DEFAULT">
+      <Button fx:id="b1" disable="true" layoutX="548.0" layoutY="446.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="71.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="DEFAULT">
          <font>
             <Font name="Phosphate Inline" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="b2" layoutX="195.0" layoutY="141.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
-         <font>
-            <Font name="Phosphate Inline" size="13.0" />
-         </font>
-         <padding>
-            <Insets right="3.0" />
-         </padding>
-      </Button>
-      <Button fx:id="b3" layoutX="350.0" layoutY="141.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
+      <Button fx:id="b2" layoutX="701.0" layoutY="447.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
          <font>
             <Font name="Phosphate Inline" size="13.0" />
          </font>
@@ -42,7 +37,7 @@
             <Insets right="3.0" />
          </padding>
       </Button>
-      <Button fx:id="b4" layoutX="487.0" layoutY="141.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
+      <Button fx:id="b3" layoutX="856.0" layoutY="447.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
          <font>
             <Font name="Phosphate Inline" size="13.0" />
          </font>
@@ -50,7 +45,7 @@
             <Insets right="3.0" />
          </padding>
       </Button>
-      <Button fx:id="b5" layoutX="40.0" layoutY="241.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
+      <Button fx:id="b4" layoutX="993.0" layoutY="447.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
          <font>
             <Font name="Phosphate Inline" size="13.0" />
          </font>
@@ -58,7 +53,7 @@
             <Insets right="3.0" />
          </padding>
       </Button>
-      <Button fx:id="b6" layoutX="195.0" layoutY="241.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
+      <Button fx:id="b5" layoutX="546.0" layoutY="547.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
          <font>
             <Font name="Phosphate Inline" size="13.0" />
          </font>
@@ -66,7 +61,7 @@
             <Insets right="3.0" />
          </padding>
       </Button>
-      <Button fx:id="b7" layoutX="350.0" layoutY="241.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
+      <Button fx:id="b6" layoutX="701.0" layoutY="547.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
          <font>
             <Font name="Phosphate Inline" size="13.0" />
          </font>
@@ -74,7 +69,7 @@
             <Insets right="3.0" />
          </padding>
       </Button>
-      <Button fx:id="b8" layoutX="487.0" layoutY="241.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
+      <Button fx:id="b7" layoutX="856.0" layoutY="547.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
          <font>
             <Font name="Phosphate Inline" size="13.0" />
          </font>
@@ -82,7 +77,7 @@
             <Insets right="3.0" />
          </padding>
       </Button>
-      <Button fx:id="b9" layoutX="40.0" layoutY="341.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
+      <Button fx:id="b8" layoutX="993.0" layoutY="547.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
          <font>
             <Font name="Phosphate Inline" size="13.0" />
          </font>
@@ -90,7 +85,7 @@
             <Insets right="3.0" />
          </padding>
       </Button>
-      <Button fx:id="b10" layoutX="195.0" layoutY="341.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
+      <Button fx:id="b9" layoutX="546.0" layoutY="647.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
          <font>
             <Font name="Phosphate Inline" size="13.0" />
          </font>
@@ -98,7 +93,7 @@
             <Insets right="3.0" />
          </padding>
       </Button>
-      <Button fx:id="b11" layoutX="350.0" layoutY="341.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
+      <Button fx:id="b10" layoutX="701.0" layoutY="647.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
          <font>
             <Font name="Phosphate Inline" size="13.0" />
          </font>
@@ -106,7 +101,7 @@
             <Insets right="3.0" />
          </padding>
       </Button>
-      <Button fx:id="b12" layoutX="487.0" layoutY="341.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
+      <Button fx:id="b11" layoutX="856.0" layoutY="647.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
          <font>
             <Font name="Phosphate Inline" size="13.0" />
          </font>
@@ -114,65 +109,82 @@
             <Insets right="3.0" />
          </padding>
       </Button>
-      <Label alignment="CENTER" layoutX="25.0" layoutY="100.0" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #AABBCC; -fx-background-radius: 30;" text="STATELESS" textFill="#ff7d7d">
+      <Button fx:id="b12" layoutX="993.0" layoutY="647.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
+         <font>
+            <Font name="Phosphate Inline" size="13.0" />
+         </font>
+         <padding>
+            <Insets right="3.0" />
+         </padding>
+      </Button>
+      <Label alignment="CENTER" layoutX="531.0" layoutY="406.0" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #AABBCC; -fx-background-radius: 30;" text="STATELESS" textFill="#ff7d7d">
          <font>
             <Font name="Chalkduster" size="15.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="179.0" layoutY="100.0" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #AABBCC; -fx-background-radius: 30;" text="ANGRY" textFill="#ff7d7d">
+      <Label alignment="CENTER" layoutX="685.0" layoutY="406.0" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #AABBCC; -fx-background-radius: 30;" text="ANGRY" textFill="#ff7d7d">
          <font>
             <Font name="Chalkduster" size="18.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="334.0" layoutY="100.0" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #AABBCC; -fx-background-radius: 30;" text="STUPID" textFill="#ff7d7d">
+      <Label alignment="CENTER" layoutX="840.0" layoutY="406.0" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #AABBCC; -fx-background-radius: 30;" text="STUPID" textFill="#ff7d7d">
          <font>
             <Font name="Chalkduster" size="17.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="474.0" layoutY="100.0" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #AABBCC; -fx-background-radius: 30;" text="FRIENDLY" textFill="#ff7d7d">
+      <Label alignment="CENTER" layoutX="980.0" layoutY="406.0" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #AABBCC; -fx-background-radius: 30;" text="FRIENDLY" textFill="#ff7d7d">
          <font>
             <Font name="Chalkduster" size="17.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="25.0" layoutY="200.0" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #AABBCC; -fx-background-radius: 30;" text="SHY" textFill="#ff7d7d">
+      <Label alignment="CENTER" layoutX="531.0" layoutY="506.0" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #AABBCC; -fx-background-radius: 30;" text="SHY" textFill="#ff7d7d">
          <font>
             <Font name="Chalkduster" size="15.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="176.0" layoutY="200.0" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #AABBCC; -fx-background-radius: 30;" text="YODA TALK" textFill="#ff7d7d">
+      <Label alignment="CENTER" layoutX="682.0" layoutY="506.0" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #AABBCC; -fx-background-radius: 30;" text="YODA TALK" textFill="#ff7d7d">
          <font>
             <Font name="Chalkduster" size="15.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="331.0" layoutY="200.0" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #AABBCC; -fx-background-radius: 30;" text="EMOJI ONLY" textFill="#ff7d7d">
+      <Label alignment="CENTER" layoutX="837.0" layoutY="506.0" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #AABBCC; -fx-background-radius: 30;" text="EMOJI ONLY" textFill="#ff7d7d">
          <font>
             <Font name="Chalkduster" size="15.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="471.0" layoutY="200.0" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #AABBCC; -fx-background-radius: 30;" text="GIRLFRIEND" textFill="#ff7d7d">
+      <Label alignment="CENTER" layoutX="977.0" layoutY="506.0" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #AABBCC; -fx-background-radius: 30;" text="GIRLFRIEND" textFill="#ff7d7d">
          <font>
             <Font name="Chalkduster" size="14.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="25.0" layoutY="300.0" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #AABBCC; -fx-background-radius: 30;" text="MATH TUTOR" textFill="#ff7d7d">
+      <Label alignment="CENTER" layoutX="531.0" layoutY="606.0" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #AABBCC; -fx-background-radius: 30;" text="MATH TUTOR" textFill="#ff7d7d">
          <font>
             <Font name="Chalkduster" size="14.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="177.0" layoutY="300.0" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #AABBCC; -fx-background-radius: 30;" text="PROGRAMMER" textFill="#ff7d7d">
+      <Label alignment="CENTER" layoutX="683.0" layoutY="606.0" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #AABBCC; -fx-background-radius: 30;" text="PROGRAMMER" textFill="#ff7d7d">
          <font>
             <Font name="Chalkduster" size="12.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="332.0" layoutY="300.0" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #AABBCC; -fx-background-radius: 30;" text="HISTORY TUTOR" textFill="#ff7d7d">
+      <Label alignment="CENTER" layoutX="838.0" layoutY="606.0" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #AABBCC; -fx-background-radius: 30;" text="HISTORY TUTOR" textFill="#ff7d7d">
          <font>
             <Font name="Chalkduster" size="10.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="472.0" layoutY="300.0" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #AABBCC; -fx-background-radius: 30;" text="COOK/CHEF" textFill="#ff7d7d">
+      <Label alignment="CENTER" layoutX="978.0" layoutY="606.0" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #AABBCC; -fx-background-radius: 30;" text="COOK/CHEF" textFill="#ff7d7d">
          <font>
             <Font name="Chalkduster" size="15.0" />
          </font>
       </Label>
+      <StackPane layoutX="260.0" layoutY="130.0" prefHeight="150.0" prefWidth="200.0" style="-fx-background-radius: 100 100 100 100; -fx-border-radius: 10; -fx-background-color: #000000;">
+         <children>
+            <ImageView fitHeight="174.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Profile%20Pics/angry.png" />
+               </image>
+            </ImageView>
+         </children>
+      </StackPane>
    </children>
 </AnchorPane>

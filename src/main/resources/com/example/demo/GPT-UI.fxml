@@ -6,6 +6,8 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -52,21 +54,21 @@
             <Font name="Chalkboard" size="13.0" />
          </font>
       </RadioButton>
-      <Text fx:id="count" fill="#09c0c9" layoutX="52.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Count">
+      <Text fx:id="count" fill="#09c0c9" layoutX="37.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Count">
          <font>
             <Font name="Impact" size="21.0" />
          </font>
       </Text>
-      <Button layoutX="302.0" layoutY="30.0" mnemonicParsing="false" onAction="#goToCreditsOnAction" opacity="0.7" prefHeight="40.0" prefWidth="120.0" style="-fx-background-radius: 50; -fx-background-color: #61FF12;" text="BUY CREDITS">
+      <Button layoutX="259.0" layoutY="30.0" mnemonicParsing="false" onAction="#goToCreditsOnAction" opacity="0.7" prefHeight="40.0" prefWidth="120.0" style="-fx-background-radius: 50; -fx-background-color: #61FF12;" text="BUY CREDITS">
          <font>
             <Font name="Phosphate Inline" size="17.0" />
          </font></Button>
-      <Label alignment="CENTER" layoutX="26.0" layoutY="13.0" prefHeight="27.0" prefWidth="70.0" text="Credits" textFill="#00b3e4">
+      <Label alignment="CENTER" layoutX="11.0" layoutY="16.0" prefHeight="27.0" prefWidth="70.0" text="Credits" textFill="#00b3e4">
          <font>
             <Font name="Impact" size="21.0" />
          </font>
       </Label>
-      <Button layoutX="168.0" layoutY="30.0" mnemonicParsing="false" onAction="#goToProfileOnAction" opacity="0.7" prefHeight="40.0" prefWidth="120.0" style="-fx-background-radius: 50; -fx-background-color: #61FF12;" text="BUY PROFILE">
+      <Button layoutX="125.0" layoutY="30.0" mnemonicParsing="false" onAction="#goToProfileOnAction" opacity="0.7" prefHeight="40.0" prefWidth="120.0" style="-fx-background-radius: 50; -fx-background-color: #61FF12;" text="BUY PROFILE">
          <font>
             <Font name="Phosphate Inline" size="17.0" />
          </font></Button>
@@ -110,5 +112,16 @@
             <Font name="Chalkboard" size="13.0" />
          </font>
       </RadioButton>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="380.0" layoutY="-17.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Logos/chatbox.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="40.0" layoutY="750.0" text="2024 ChatBox" textFill="WHITE" />
+      <ImageView fitHeight="79.0" fitWidth="42.0" layoutX="-3.0" layoutY="739.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Logos/chatbox.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
