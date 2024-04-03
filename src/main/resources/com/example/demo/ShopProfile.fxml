@@ -7,133 +7,124 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<Pane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #BFC9CA;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.ShopControllers.ProfileController">
+<Pane prefHeight="772.0" prefWidth="1210.0" style="-fx-background-color: #BFC9CA;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.ShopControllers.ProfileController">
    <children>
-      <AnchorPane layoutX="123.0" layoutY="106.0" prefHeight="637.0" prefWidth="975.0" style="-fx-background-color: #85929E; -fx-background-radius: 50;">
+      <AnchorPane layoutX="123.0" layoutY="106.0" prefHeight="586.0" prefWidth="975.0" style="-fx-background-color: #85929E; -fx-background-radius: 50;">
          <children>
-            <Pane layoutX="33.0" layoutY="28.0" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: #FFFBF7; -fx-background-radius: 20;">
+            <Pane layoutX="33.0" layoutY="28.0" prefHeight="100.0" prefWidth="150.0" style="-fx-background-color: #FFFBF7; -fx-background-radius: 20;">
                <children>
-                  <Label alignment="TOP_CENTER" layoutX="30.0" layoutY="3.0" text="Stateless">
+                  <Label alignment="TOP_CENTER" layoutX="10.0" layoutY="26.0" text="Stateless">
                      <font>
-                        <Font name="Rockwell" size="21.0" />
+                        <Font name="Rockwell" size="30.0" />
                      </font>
                   </Label>
                </children>
             </Pane>
-            <Pane layoutX="783.0" layoutY="428.0" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: #FFFBF7; -fx-background-radius: 20;">
+            <Pane layoutX="783.0" layoutY="428.0" prefHeight="100.0" prefWidth="150.0" style="-fx-background-color: #FFFBF7; -fx-background-radius: 20;">
                <children>
-                  <Label layoutX="16.0" layoutY="3.0" text="Chef/Cook">
+                  <Label layoutX="2.0" layoutY="32.0" text="Chef/Cook">
                      <font>
-                        <Font name="Rockwell" size="21.0" />
+                        <Font name="Rockwell" size="26.0" />
                      </font>
                   </Label>
                </children>
             </Pane>
-            <Pane layoutX="533.0" layoutY="428.0" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: #FFFBF7; -fx-background-radius: 20;">
+            <Pane layoutX="533.0" layoutY="428.0" prefHeight="100.0" prefWidth="150.0" style="-fx-background-color: #FFFBF7; -fx-background-radius: 20;">
                <children>
-                  <Label layoutX="22.0" layoutY="3.0" text="Storyteller">
+                  <Label layoutX="10.0" layoutY="32.0" text="Storyteller">
                      <font>
-                        <Font name="Rockwell" size="21.0" />
+                        <Font name="Rockwell" size="25.0" />
                      </font>
                   </Label>
                </children>
             </Pane>
-            <Pane layoutX="533.0" layoutY="228.0" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: #FFFBF7; -fx-background-radius: 20;">
+            <Pane layoutX="533.0" layoutY="228.0" prefHeight="100.0" prefWidth="150.0" style="-fx-background-color: #FFFBF7; -fx-background-radius: 20;">
                <children>
-                  <Label layoutX="40.0" layoutY="3.0" text="Doctor">
+                  <Label layoutX="25.0" layoutY="26.0" text="Doctor">
                      <font>
-                        <Font name="Rockwell" size="21.0" />
+                        <Font name="Rockwell" size="30.0" />
                      </font>
                   </Label>
                </children>
             </Pane>
-            <Pane layoutX="283.0" layoutY="428.0" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: #FFFBF7; -fx-background-radius: 20;">
+            <Pane layoutX="283.0" layoutY="428.0" prefHeight="100.0" prefWidth="150.0" style="-fx-background-color: #FFFBF7; -fx-background-radius: 20;">
                <children>
-                  <Label layoutX="8.0" layoutY="3.0" text="Programmer">
+                  <Label layoutX="7.0" layoutY="35.0" text="Programmer">
                      <font>
-                        <Font name="Rockwell" size="21.0" />
+                        <Font name="Rockwell" size="22.0" />
                      </font>
                   </Label>
                </children>
             </Pane>
-            <Pane layoutX="33.0" layoutY="428.0" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: #FFFBF7; -fx-background-radius: 20;">
+            <Pane layoutX="33.0" layoutY="428.0" prefHeight="100.0" prefWidth="150.0" style="-fx-background-color: #FFFBF7; -fx-background-radius: 20;">
                <children>
-                  <Label layoutX="36.0" layoutY="3.0" text="Rapper">
+                  <Label layoutX="20.0" layoutY="30.0" text="Rapper">
                      <font>
-                        <Font name="Rockwell" size="21.0" />
+                        <Font name="Rockwell" size="30.0" />
                      </font>
                   </Label>
                </children>
             </Pane>
-            <Pane layoutX="33.0" layoutY="228.0" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: #FFFBF7; -fx-background-radius: 20;">
+            <Pane layoutX="33.0" layoutY="228.0" prefHeight="100.0" prefWidth="150.0" style="-fx-background-color: #FFFBF7; -fx-background-radius: 20;">
                <children>
-                  <Label alignment="TOP_CENTER" layoutX="40.0" layoutY="3.0" text="Drunk">
+                  <Label alignment="TOP_CENTER" layoutX="27.0" layoutY="27.0" text="Drunk">
                      <font>
-                        <Font name="Rockwell" size="21.0" />
+                        <Font name="Rockwell" size="30.0" />
                      </font>
                   </Label>
                </children>
             </Pane>
-            <Pane layoutX="283.0" layoutY="228.0" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: #FFFBF7; -fx-background-radius: 20;">
+            <Pane layoutX="283.0" layoutY="228.0" prefHeight="100.0" prefWidth="150.0" style="-fx-background-color: #FFFBF7; -fx-background-radius: 20;">
                <children>
-                  <Label layoutX="47.0" layoutY="3.0" text="Yoda">
+                  <Label layoutX="35.0" layoutY="26.0" text="Yoda">
                      <font>
-                        <Font name="Rockwell" size="21.0" />
+                        <Font name="Rockwell" size="30.0" />
                      </font>
                   </Label>
                </children>
             </Pane>
-            <Pane layoutX="783.0" layoutY="228.0" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: #FFFBF7; -fx-background-radius: 20;">
+            <Pane layoutX="783.0" layoutY="228.0" prefHeight="100.0" prefWidth="150.0" style="-fx-background-color: #FFFBF7; -fx-background-radius: 20;">
                <children>
-                  <Label layoutX="25.0" layoutY="3.0" text="Girlfriend">
+                  <Label layoutX="5.0" layoutY="30.0" text="Girlfriend">
                      <font>
-                        <Font name="Rockwell" size="21.0" />
+                        <Font name="Rockwell" size="28.0" />
                      </font>
                   </Label>
                </children>
             </Pane>
-            <Pane layoutX="533.0" layoutY="28.0" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: #FFFBF7; -fx-background-radius: 20;">
+            <Pane layoutX="533.0" layoutY="28.0" prefHeight="100.0" prefWidth="150.0" style="-fx-background-color: #FFFBF7; -fx-background-radius: 20;">
                <children>
-                  <Label layoutX="43.0" layoutY="3.0" text="Stupid">
+                  <Label layoutX="26.0" layoutY="26.0" text="Stupid">
                      <font>
-                        <Font name="Rockwell" size="21.0" />
+                        <Font name="Rockwell" size="30.0" />
                      </font>
                   </Label>
                </children>
             </Pane>
-            <Pane layoutX="783.0" layoutY="28.0" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: #FFFBF7; -fx-background-radius: 20;">
+            <Pane layoutX="783.0" layoutY="28.0" prefHeight="100.0" prefWidth="150.0" style="-fx-background-color: #FFFBF7; -fx-background-radius: 20;">
                <children>
-                  <Label layoutX="33.0" layoutY="3.0" text="Friendly">
+                  <Label layoutX="12.0" layoutY="26.0" text="Friendly">
                      <font>
-                        <Font name="Rockwell" size="21.0" />
+                        <Font name="Rockwell" size="30.0" />
                      </font>
                   </Label>
                </children>
             </Pane>
-            <Pane layoutX="283.0" layoutY="28.0" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: #FFFBF7; -fx-background-radius: 20;">
+            <Pane layoutX="283.0" layoutY="28.0" prefHeight="100.0" prefWidth="150.0" style="-fx-background-color: #FFFBF7; -fx-background-radius: 20;">
                <children>
-                  <Label layoutX="43.0" layoutY="3.0" text="Angry">
+                  <Label layoutX="25.0" layoutY="26.0" text="Angry">
                      <font>
-                        <Font name="Rockwell" size="21.0" />
+                        <Font name="Rockwell" size="30.0" />
                      </font>
                   </Label>
                </children>
             </Pane>
-            <Button fx:id="b1" disable="true" layoutX="69.0" layoutY="178.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="71.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="DEFAULT">
+            <Button fx:id="b1" disable="true" layoutX="69.0" layoutY="128.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="71.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="DEFAULT">
                <font>
                   <Font name="Phosphate Inline" size="13.0" />
                </font>
             </Button>
-            <Button fx:id="b2" layoutX="323.0" layoutY="178.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
-               <font>
-                  <Font name="Phosphate Inline" size="13.0" />
-               </font>
-               <padding>
-                  <Insets right="3.0" />
-               </padding>
-            </Button>
-            <Button fx:id="b3" layoutX="573.0" layoutY="178.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
+            <Button fx:id="b2" layoutX="323.0" layoutY="128.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
                <font>
                   <Font name="Phosphate Inline" size="13.0" />
                </font>
@@ -141,7 +132,7 @@
                   <Insets right="3.0" />
                </padding>
             </Button>
-            <Button fx:id="b4" layoutX="823.0" layoutY="178.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
+            <Button fx:id="b3" layoutX="573.0" layoutY="128.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
                <font>
                   <Font name="Phosphate Inline" size="13.0" />
                </font>
@@ -149,7 +140,7 @@
                   <Insets right="3.0" />
                </padding>
             </Button>
-            <Button fx:id="b5" layoutX="69.0" layoutY="378.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
+            <Button fx:id="b4" layoutX="823.0" layoutY="128.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
                <font>
                   <Font name="Phosphate Inline" size="13.0" />
                </font>
@@ -157,7 +148,7 @@
                   <Insets right="3.0" />
                </padding>
             </Button>
-            <Button fx:id="b6" layoutX="323.0" layoutY="378.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
+            <Button fx:id="b5" layoutX="69.0" layoutY="328.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
                <font>
                   <Font name="Phosphate Inline" size="13.0" />
                </font>
@@ -165,7 +156,7 @@
                   <Insets right="3.0" />
                </padding>
             </Button>
-            <Button fx:id="b7" layoutX="573.0" layoutY="378.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
+            <Button fx:id="b6" layoutX="323.0" layoutY="328.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
                <font>
                   <Font name="Phosphate Inline" size="13.0" />
                </font>
@@ -173,7 +164,7 @@
                   <Insets right="3.0" />
                </padding>
             </Button>
-            <Button fx:id="b8" layoutX="823.0" layoutY="378.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
+            <Button fx:id="b7" layoutX="573.0" layoutY="328.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
                <font>
                   <Font name="Phosphate Inline" size="13.0" />
                </font>
@@ -181,7 +172,7 @@
                   <Insets right="3.0" />
                </padding>
             </Button>
-            <Button fx:id="b10" layoutX="323.0" layoutY="578.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
+            <Button fx:id="b8" layoutX="823.0" layoutY="328.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
                <font>
                   <Font name="Phosphate Inline" size="13.0" />
                </font>
@@ -189,7 +180,7 @@
                   <Insets right="3.0" />
                </padding>
             </Button>
-            <Button fx:id="b12" layoutX="823.0" layoutY="578.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
+            <Button fx:id="b10" layoutX="323.0" layoutY="528.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
                <font>
                   <Font name="Phosphate Inline" size="13.0" />
                </font>
@@ -197,7 +188,7 @@
                   <Insets right="3.0" />
                </padding>
             </Button>
-            <Button fx:id="b9" layoutX="69.0" layoutY="578.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
+            <Button fx:id="b12" layoutX="823.0" layoutY="528.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
                <font>
                   <Font name="Phosphate Inline" size="13.0" />
                </font>
@@ -205,7 +196,15 @@
                   <Insets right="3.0" />
                </padding>
             </Button>
-            <Button fx:id="b11" layoutX="573.0" layoutY="578.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
+            <Button fx:id="b9" layoutX="69.0" layoutY="528.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
+               <font>
+                  <Font name="Phosphate Inline" size="13.0" />
+               </font>
+               <padding>
+                  <Insets right="3.0" />
+               </padding>
+            </Button>
+            <Button fx:id="b11" layoutX="573.0" layoutY="528.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="BUY">
                <font>
                   <Font name="Phosphate Inline" size="13.0" />
                </font>
@@ -220,12 +219,12 @@
             <Font name="Arial Rounded MT Bold" size="42.0" />
          </font>
       </Label>
-      <Button layoutX="215.0" layoutY="25.0" mnemonicParsing="false" onAction="#goToCreditsOnAction" prefHeight="50.0" prefWidth="140.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="SHOP CREDITS">
+      <Button layoutX="215.0" layoutY="25.0" mnemonicParsing="false" onAction="#goToCreditsOnAction" prefHeight="50.0" prefWidth="140.0" style="-fx-background-radius: 30; -fx-background-color: #EB984E;" text="SHOP CREDITS">
          <font>
             <Font name="Phosphate Inline" size="13.0" />
          </font>
       </Button>
-      <Button layoutX="34.0" layoutY="26.0" mnemonicParsing="false" onAction="#goToChatOnAction" prefHeight="50.0" prefWidth="140.0" style="-fx-background-radius: 30; -fx-background-color: #1CEA00;" text="CHATGPT">
+      <Button layoutX="34.0" layoutY="26.0" mnemonicParsing="false" onAction="#goToChatOnAction" prefHeight="50.0" prefWidth="140.0" style="-fx-background-radius: 30; -fx-background-color: #EB984E;" text="CHATGPT">
          <font>
             <Font name="Phosphate Inline" size="13.0" />
          </font>

@@ -6,15 +6,15 @@ import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import java.util.*;
 import java.util.concurrent.ExecutionException;
-
-public class Firebase {
+interface regex{
+    String regexUserName = "\\b[A-Z][a-zA-Z]+";
+    String regexEmail = "[a-z0-9]+@[a-z0-9]+.[0-z]{2,6}";
+}
+public class Firebase implements  regex{
     private ArrayList<String> registeredEmailArryList = new ArrayList<>();
     private final ObservableList<Person> listOfUsers = FXCollections.observableArrayList();
     private boolean key;
@@ -68,6 +68,7 @@ public class Firebase {
                 buttonArry[i].setDisable(false);
             } else {
                 buttonArry[i].setDisable(true);
+                buttonArry[i].setText("Bought");
             }
         }
     }
@@ -169,28 +170,34 @@ public class Firebase {
         return false;
     }
 
-    public void addData(TextField emailTF, TextField name, TextField age, PasswordField passwordTF) {
+    public boolean addData(TextField emailTF, TextField name, TextField age, PasswordField passwordTF) {
+        if (name.getText().matches(regexUserName) && Double.valueOf(age.getText()) >= 18 && emailTF.getText().matches(regexEmail)
+            && !passwordTF.getText().isBlank() && !age.getText().isBlank()) {
+            DocumentReference docRef = Application.fstore.collection("Persons").document(UUID.randomUUID().toString());
+            Map<String, Object> data = new HashMap<>();
+            data.put("messageCount", 10);
+            data.put("Name", name.getText());
+            data.put("Age", age.getText());
+            data.put("email", emailTF.getText());
+            data.put("password", passwordTF.getText());
+            data.put("gpt1", 1);
 
-        DocumentReference docRef = Application.fstore.collection("Persons").document(UUID.randomUUID().toString());
-        Map<String, Object> data = new HashMap<>();
-        data.put("messageCount", 10);
-        data.put("Name", name.getText());
-        data.put("Age", age.getText());
-        data.put("email", emailTF.getText());
-        data.put("password", passwordTF.getText());
-        data.put("gpt1", 1);
+            for (int i = 1; i < gptArry.length; i++) {
+                String key = "gpt" + (i + 1);
+                data.put(key, 0);
+                setID(docRef.getId());
+                setNewCredit(10);
 
-        for (int i = 1; i < gptArry.length; i++) {
-            String key = "gpt" + (i + 1);
-            data.put(key, 0);
-            setID(docRef.getId());
-            setNewCredit(10);
+            }
 
+            ApiFuture<WriteResult> result = docRef.set(data);
+            System.out.println("User registration is successful");
+            return true;
         }
+        else {
 
-        ApiFuture<WriteResult> result = docRef.set(data);
-        System.out.println("User registration is successful");
+            return false;
+        }
     }
-
 
 }

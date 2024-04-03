@@ -39,36 +39,42 @@ public class ProfileController implements Initializable {
             firebase.buyGPT(1);
             firebase.updateDatabase();
             firebase.setShopGPTModels(buttonArry);
+            b2.setText("Bought");
         });
 
         b3.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
             firebase.buyGPT(2);
             firebase.updateDatabase();
             firebase.setShopGPTModels(buttonArry);
+            b3.setText("Bought");
         });
 
         b4.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
             firebase.buyGPT(3);
             firebase.updateDatabase();
             firebase.setShopGPTModels(buttonArry);
+            b4.setText("Bought");
         });
 
         b5.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
             firebase.buyGPT(4);
             firebase.updateDatabase();
             firebase.setShopGPTModels(buttonArry);
+            b5.setText("Bought");
         });
 
         b6.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
             firebase.buyGPT(5);
             firebase.updateDatabase();
             firebase.setShopGPTModels(buttonArry);
+            b6.setText("Bought");
         });
 
         b7.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
             firebase.buyGPT(6);
             firebase.updateDatabase();
             firebase.setShopGPTModels(buttonArry);
+            b7.setText("Bought");
         });
 
 
@@ -76,30 +82,35 @@ public class ProfileController implements Initializable {
             firebase.buyGPT(7);
             firebase.updateDatabase();
             firebase.setShopGPTModels(buttonArry);
+            b8.setText("Bought");
         });
 
         b9.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
             firebase.buyGPT(8);
             firebase.updateDatabase();
             firebase.setShopGPTModels(buttonArry);
+            b9.setText("Bought");
         });
 
         b10.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
             firebase.buyGPT(9);
             firebase.updateDatabase();
             firebase.setShopGPTModels(buttonArry);
+            b10.setText("Bought");
         });
 
         b11.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
             firebase.buyGPT(10);
             firebase.updateDatabase();
             firebase.setShopGPTModels(buttonArry);
+            b11.setText("Bought");
         });
 
         b12.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
             firebase.buyGPT(11);
             firebase.updateDatabase();
             firebase.setShopGPTModels(buttonArry);
+            b12.setText("Bought");
         });
     }
 

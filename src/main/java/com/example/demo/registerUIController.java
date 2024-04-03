@@ -32,6 +32,7 @@ public class registerUIController implements Initializable {
     private PasswordField passwordTF;
 
     Firebase firebase;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         firebase = new Firebase();
@@ -41,8 +42,19 @@ public class registerUIController implements Initializable {
     void registerOnAction(ActionEvent event) throws IOException {
         firebase.readFirebase();
         if(firebase.isEmailExist(emailTF)){
-            firebase.addData(emailTF, nameTF, ageTF, passwordTF);
-            changeScenes(event, "GPT-UI.fxml");
+            if(firebase.addData(emailTF, nameTF, ageTF, passwordTF)){
+                changeScenes(event, "GPT-UI.fxml");
+            }
+            else{
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("REGISTRATION ERROR");
+                alert.setHeaderText("REGISTRATION FORMAT");
+                alert.setContentText("Fields Can't be empty!\n\n Name has to start with CAPITAL letter!\n\n" +
+                        "Email have to follow the following format: example@example.exp\n\n" + "You have to be older than 18!\n\n"+
+                        "Password can't be empty but anything else!");
+
+                alert.showAndWait();
+            }
         }
         else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -51,7 +63,6 @@ public class registerUIController implements Initializable {
             alert.setContentText("This email already exists, please login or use another email!");
             alert.showAndWait();
         }
-
     }
 
     @FXML
