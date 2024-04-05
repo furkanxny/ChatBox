@@ -44,13 +44,16 @@ If you encounter any issues or have any questions about the application, please 
 > [!IMPORTANT]
 > Application Pictures
 
+<img width="1062" alt="Login" src="https://github.com/furkanxny/ChatBox/assets/116584632/8f7a390b-76ae-4547-86e6-430ffbc91e94">
 
-<img width="448" alt="Screen Shot 2024-03-27 at 1 25 55 PM" src="https://github.com/furkanxny/AIFX/assets/116584632/86fc8d22-7205-4642-aa63-96f47fb69ec1">
+<img width="1051" alt="Singup" src="https://github.com/furkanxny/ChatBox/assets/116584632/42ee416e-01b1-402b-a09d-8b8689168324">
 
-<img width="840" alt="Screen Shot 2024-03-27 at 1 26 18 PM" src="https://github.com/furkanxny/AIFX/assets/116584632/8d058752-e7a7-439c-ac55-39648bb71f1b">
+<img width="1252" alt="profileshop" src="https://github.com/furkanxny/ChatBox/assets/116584632/cb323aa2-ebe4-4e7e-b761-85d010cb2cb3">
+
+<img width="788" alt="creditshop" src="https://github.com/furkanxny/ChatBox/assets/116584632/8ac6c891-a03b-4a7e-a6ba-a37c254d7a3c">
+
+<img width="1383" alt="gpthome" src="https://github.com/furkanxny/ChatBox/assets/116584632/ced19a4c-0d53-40e7-88b2-45585c4bf6e2">
 
 
-<img width="841" alt="Screen Shot 2024-03-23 at 9 37 58 PM" src="https://github.com/furkanxny/AIFX/assets/116584632/aadca369-a9ab-48a1-b132-c37480cb1fd9">
 
-<img width="1397" alt="Screen Shot 2024-03-27 at 1 25 09 PM" src="https://github.com/furkanxny/AIFX/assets/116584632/f85b8756-d515-42d8-9e17-8a3422030f8b">
 
