@@ -45,8 +45,8 @@ If you encounter any issues or have any questions about the application, please 
 > Application Pictures
 
 <img width="1062" alt="Login" src="https://github.com/furkanxny/ChatBox/assets/116584632/8f7a390b-76ae-4547-86e6-430ffbc91e94">
+<img width="1045" alt="Screen Shot 2024-04-12 at 11 25 56 AM" src="https://github.com/furkanxny/ChatBox/assets/116584632/73714113-6258-4245-a5d0-81f0fa0b6b5c">
 
-<img width="1051" alt="Singup" src="https://github.com/furkanxny/ChatBox/assets/116584632/42ee416e-01b1-402b-a09d-8b8689168324">
 
 <img width="1252" alt="profileshop" src="https://github.com/furkanxny/ChatBox/assets/116584632/cb323aa2-ebe4-4e7e-b761-85d010cb2cb3">
 
