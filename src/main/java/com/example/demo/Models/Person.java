@@ -22,32 +22,8 @@ public class Person {
         this.gpt2 = gpt2;
         this.gpt3 = gpt3;
         this.gpt4 = gpt4;
-        this.gpt5 = gpt5;
-        this.gpt6 = gpt6;
-        this.gpt7 = gpt7;
-        this.gpt8 = gpt8;
-        this.gpt9 = gpt9;
-        this.gpt10 = gpt10;
-        this.gpt11 = gpt11;
-        this.gpt12 = gpt12;
     }
 
-
-
-    public int getGpt1(){return gpt1;}
-    public void setGpt1(int gpt1){this.gpt1 = gpt1;}
-
-
-    public int getGpt2(){return gpt2;}
-    public void setGpt2(int gpt2){this.gpt2 = gpt2;}
-
-
-    public int getGpt3(){return gpt3;}
-    public void setGpt3(int gpt3){this.gpt3 = gpt1;}
-
-
-    public int getGpt4(){return gpt4;}
-    public void setGpt4(int gpt4){this.gpt1 = gpt4;}
 
     public String getName() {
         return name;
@@ -56,34 +32,5 @@ public class Person {
     public void setName(String name) {
         this.name = name;
     }
-
-    public int getMessageCount () {
-        return messageCount;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
 
 }

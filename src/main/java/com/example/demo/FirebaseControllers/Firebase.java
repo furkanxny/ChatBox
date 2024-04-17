@@ -171,32 +171,44 @@ public class Firebase implements  regex{
     }
 
     public boolean addData(TextField emailTF, TextField name, TextField age, PasswordField passwordTF) {
-        if (name.getText().matches(regexUserName) && Double.valueOf(age.getText()) >= 18 && emailTF.getText().matches(regexEmail)
-            && !passwordTF.getText().isBlank() && !age.getText().isBlank()) {
-            DocumentReference docRef = CSApplication.getFirestore().collection("Persons").document(UUID.randomUUID().toString());
+        try {
+            double ageValue = Double.parseDouble(age.getText());
+            if (!name.getText().matches(regexUserName) ||
+                    ageValue < 18 ||
+                    !emailTF.getText().matches(regexEmail) ||
+                    passwordTF.getText().isBlank() ||
+                    age.getText().isBlank()) {
+                return false;
+            }
+
+
+
             Map<String, Object> data = new HashMap<>();
-            data.put("messageCount", 10);
             data.put("Name", name.getText());
             data.put("Age", age.getText());
             data.put("email", emailTF.getText());
             data.put("password", passwordTF.getText());
-            data.put("gpt1", 1);
+            data.put("messageCount", 10);
+            initializeGptFields(data);
 
-            for (int i = 1; i < gptArry.length; i++) {
-                String key = "gpt" + (i + 1);
-                data.put(key, 0);
-                setID(docRef.getId());
-                setNewCredit(10);
 
-            }
-
+            DocumentReference docRef = CSApplication.getFirestore().collection("Persons").document(UUID.randomUUID().toString());
             ApiFuture<WriteResult> result = docRef.set(data);
-            System.out.println("User registration is successful");
+            System.out.println("User registration is successful: " + result.get().getUpdateTime());
             return true;
-        }
-        else {
-
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid age format");
             return false;
+        } catch (Exception e) {
+            System.out.println("Error during registration: " + e.getMessage());
+            return false;
+        }
+    }
+
+
+    private void initializeGptFields(Map<String, Object> data) {
+        for (int i = 1; i <= gptArry.length; i++) {
+            data.put("gpt" + i, gptArry[i - 1]);
         }
     }
 
