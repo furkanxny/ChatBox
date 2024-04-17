@@ -1,7 +1,7 @@
 package com.example.demo.FirebaseControllers;
 
 import com.example.demo.Models.Person;
-import com.example.demo.Application;
+import com.example.demo.CSApplication;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.*;
 import javafx.collections.FXCollections;
@@ -23,7 +23,7 @@ public class Firebase implements  regex{
     private static int messageCount;
     private static int gpt1, gpt2, gpt3, gpt4, gpt5, gpt6, gpt7, gpt8, gpt9, gpt10, gpt11, gpt12;
     static int[] gptArry = new int[]{gpt1, gpt2, gpt3, gpt4, gpt5, gpt6, gpt7, gpt8, gpt9, gpt10, gpt11, gpt12};
-    private Firestore firestore = Application.fstore;
+    private final Firestore firestore = CSApplication.getFirestore();
 
 
     public Firebase() {
@@ -94,7 +94,7 @@ public class Firebase implements  regex{
 
     public boolean readFirebase() {
         key = false;
-        ApiFuture<QuerySnapshot> future = Application.fstore.collection("Persons").get();
+        ApiFuture<QuerySnapshot> future = CSApplication.getFirestore().collection("Persons").get();
         List<QueryDocumentSnapshot> documents;
         try {
             documents = future.get().getDocuments();
@@ -121,7 +121,7 @@ public class Firebase implements  regex{
 
 
     public boolean updateDatabase() {
-        DocumentReference docRef = Application.fstore.collection("Persons")
+        DocumentReference docRef = CSApplication.getFirestore().collection("Persons")
                 .document(ID);
         Map<String, Object> updates = new HashMap<>();
         updates.put("messageCount", messageCount);
@@ -173,7 +173,7 @@ public class Firebase implements  regex{
     public boolean addData(TextField emailTF, TextField name, TextField age, PasswordField passwordTF) {
         if (name.getText().matches(regexUserName) && Double.valueOf(age.getText()) >= 18 && emailTF.getText().matches(regexEmail)
             && !passwordTF.getText().isBlank() && !age.getText().isBlank()) {
-            DocumentReference docRef = Application.fstore.collection("Persons").document(UUID.randomUUID().toString());
+            DocumentReference docRef = CSApplication.getFirestore().collection("Persons").document(UUID.randomUUID().toString());
             Map<String, Object> data = new HashMap<>();
             data.put("messageCount", 10);
             data.put("Name", name.getText());

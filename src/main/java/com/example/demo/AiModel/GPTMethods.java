@@ -7,6 +7,7 @@ import javafx.scene.control.TextField;
 
 import java.io.InputStream;
 import java.util.List;
+import java.util.Locale;
 import java.util.Optional;
 import java.util.Properties;
 
@@ -102,7 +103,7 @@ public class GPTMethods {
 
     private static boolean isRunStateFinal(RunResponseDTO runResponseDTO) {
         List<String> finalStates = List.of("cancelled", "failed", "completed", "expired"); //I consider these states as final
-        String runStatus = Optional.of(runResponseDTO).map(RunResponseDTO::status).orElse("unknown").toLowerCase();
+        String runStatus = Optional.of(runResponseDTO).map(RunResponseDTO::status).orElse("unknown").toLowerCase(Locale.ENGLISH);
         return finalStates.contains(runStatus);
     }
 

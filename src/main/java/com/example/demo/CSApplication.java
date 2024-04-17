@@ -5,18 +5,17 @@ import com.google.cloud.firestore.Firestore;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
-public class Application extends javafx.application.Application {
-    public static Firestore fstore;
+public class CSApplication extends javafx.application.Application {
+    private static Firestore fstore;
     private final FirestoreContext contxtFirebase = new FirestoreContext();
 
     @Override
     public void start(Stage stage) throws IOException {
         fstore = contxtFirebase.firebase();
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("LogIn.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(CSApplication.class.getResource("LogIn.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1000, 700);
         //stage.initStyle(StageStyle.UNDECORATED);
         stage.setTitle("CHATBOX");
@@ -25,7 +24,9 @@ public class Application extends javafx.application.Application {
         stage.centerOnScreen();
         stage.show();
     }
-
+    public static synchronized Firestore getFirestore() {
+        return fstore;
+    }
 
     public static void main(String[] args) {
         launch();

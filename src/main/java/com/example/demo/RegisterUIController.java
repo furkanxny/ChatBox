@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class registerUIController implements Initializable {
+public class RegisterUIController implements Initializable {
 
     @FXML
     private TextField ageTF;
